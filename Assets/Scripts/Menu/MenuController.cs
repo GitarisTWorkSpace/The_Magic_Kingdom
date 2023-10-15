@@ -8,14 +8,14 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Slider loadingBar;
     [SerializeField] private float waitingTime;
 
-    void Start()
+    private void Start()
     {
         loadingBar.maxValue = 100f;
     }
 
     public void StartGame()
     {
-        StartCoroutine(LoadingNewScene());
+        StartCoroutine(LoadingGaneScene());
     }
 
     private void MoveToGameScene()
@@ -23,7 +23,7 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    private IEnumerator LoadingNewScene()
+    private IEnumerator LoadingGaneScene()
     {
         while (loadingBar.value < 100)
         {
