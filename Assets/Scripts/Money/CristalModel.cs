@@ -8,6 +8,7 @@ public class CristalModel : ScriptableObject
     public void SetCristalCount(int value)
     {
         cristalCount += value;
+        if (cristalCount <= 0) cristalCount = 0;
     }
 
     public int GetCristalCount()

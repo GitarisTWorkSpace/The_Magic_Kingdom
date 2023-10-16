@@ -3,18 +3,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CoinModel", menuName = "Models/CoinModel", order = 1)]
 public class CoinModel : ScriptableObject
 {
-    [SerializeField] private long coinCount;
+    [SerializeField] private int coinCount;
 
-    public void SetCoinCount(long value)
+    public void SetCoinCount(int value)
     {
         coinCount += value;
         if(coinCount <= 0) coinCount = 0;
     }
 
-    public long GetCoinCount()
+    public int GetCoinCount()
     {
         return coinCount;
     }
-
-
 }

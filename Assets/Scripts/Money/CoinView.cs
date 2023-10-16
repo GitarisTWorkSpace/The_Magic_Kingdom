@@ -10,5 +10,4 @@ public class CoinView : MonoBehaviour
     {
         coinText.text = coinModel.GetCoinCount().ToString();
     }
-
 }
