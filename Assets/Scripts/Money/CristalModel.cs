@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CristalModel", menuName = "Models/CristalModel", order = 1)]
@@ -14,5 +15,10 @@ public class CristalModel : ScriptableObject
     public int GetCristalCount()
     {
         return cristalCount;
+    }
+
+    public void LoadCristalCount()
+    {
+        cristalCount = PlayerPrefs.GetInt("CristalCount");
     }
 }
