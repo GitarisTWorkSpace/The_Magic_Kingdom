@@ -1,20 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingPanel;
-    [SerializeField] private float waitingTime;
+    [SerializeField] private ClickerController playerClick;
 
-    private void Start()
+    [SerializeField] public GameObject mob;
+    private void Update()
     {
-        StartCoroutine(LoadingGameScene());
-    }
-
-    private IEnumerator LoadingGameScene()
-    {
-        yield return new WaitForSeconds(waitingTime);
-        loadingPanel.SetActive(false);
+        playerClick.damageMob = mob;
     }
 }
