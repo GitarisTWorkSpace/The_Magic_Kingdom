@@ -7,7 +7,6 @@ public class ClickerController : MonoBehaviour
 
     public void DamageToMob()
     {
-        Debug.Log("Наносим урон");
         damageMob.GetComponent<IDamageble>().TakeDemage(damageToMob);
     }
 }

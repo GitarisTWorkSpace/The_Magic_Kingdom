@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ButtonAnimation : MonoBehaviour
 {
-    [SerializeField] private Animation animation;
+    [SerializeField] public Animation animationButton;
 
     [SerializeField] private AnimationClip[] animationClips;
 
@@ -10,21 +11,21 @@ public class ButtonAnimation : MonoBehaviour
 
     private void Start()
     {
-        animation = GetComponent<Animation>();
+        animationButton = GetComponent<Animation>();
     }
 
     public void OpenClosePanel()
     {
         if (!status)
         {
-            animation.clip = animationClips[0];
-            animation.Play();
+            animationButton.clip = animationClips[0];
+            animationButton.Play();
             status = true;
         }
         else if (status)
         {
-            animation.clip = animationClips[1];
-            animation.Play();
+            animationButton.clip = animationClips[1];
+            animationButton.Play();
             status = false;
         }
     }

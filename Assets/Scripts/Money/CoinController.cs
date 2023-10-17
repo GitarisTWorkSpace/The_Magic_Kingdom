@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class CoinController : MonoBehaviour
@@ -9,7 +8,6 @@ public class CoinController : MonoBehaviour
     private void Start()
     {
         coinModel.LoadCoinCount();
-        //StartCoroutine(AutoSaveCoinCount());
     }
 
     public void AddCoin(int coinCount)
@@ -26,14 +24,9 @@ public class CoinController : MonoBehaviour
         PlayerPrefs.SetInt("CoinCount", coinModel.GetCoinCount());
     }
 
-    //private IEnumerator AutoSaveCoinCount()
-    //{
-    //    Debug.Log("Сохранил Монеты до цикла");
-    //    while (true)
-    //    {
-    //        PlayerPrefs.SetInt("CoinCount", coinModel.GetCoinCount());
-    //        Debug.Log("Созранил Монеты");
-    //        yield return new WaitForSeconds(timeSave);           
-    //    }
-    //}
+    public void ResetCoins()
+    {
+        coinModel.SetCoinCount(-coinModel.GetCoinCount());
+        PlayerPrefs.SetInt("CoinCount", coinModel.GetCoinCount());
+    }
 }

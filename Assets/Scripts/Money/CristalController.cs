@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class CristalController : MonoBehaviour
@@ -9,7 +8,6 @@ public class CristalController : MonoBehaviour
     private void Start()
     {
         cristalModel.LoadCristalCount();
-        //StartCoroutine(AutoSaveCristalCount());
     }
 
     public void AddCristals(int cristalCount)
@@ -26,14 +24,9 @@ public class CristalController : MonoBehaviour
         PlayerPrefs.SetInt("CristalCount", cristalModel.GetCristalCount());
     }
 
-    //private IEnumerator AutoSaveCristalCount()
-    //{
-    //    Debug.Log("Сохранил Кристаллы до цикла");
-    //    while (true)
-    //    {
-    //        PlayerPrefs.SetInt("CristalCount", cristalModel.GetCristalCount());
-    //        Debug.Log("Сохранил Кристаллы");
-    //        yield return new WaitForSeconds(timeSave);
-    //    }
-    //}
+    public void ResetCristal()
+    {
+        cristalModel.SetCristalCount(-cristalModel.GetCristalCount());
+        PlayerPrefs.SetInt("CristalCount", cristalModel.GetCristalCount());
+    }
 }

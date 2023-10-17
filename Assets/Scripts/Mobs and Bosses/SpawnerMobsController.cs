@@ -1,12 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpawnerMobsController : MonoBehaviour
 {
-    [Header("UI")]
-    [SerializeField] private Image mobSprite;
-    [SerializeField] private Slider mobHealthBar;
-
     [Header("Ojects")]
     [SerializeField] private GameController gameController;
     [SerializeField] private Mob mobObject;
@@ -22,18 +17,15 @@ public class SpawnerMobsController : MonoBehaviour
     {
         int index = Random.Range(0, mobList.Length);
         mobObject.mobModel = mobList[index];
-        mobSprite.sprite = mobObject.GetSprite();
         mob = Instantiate(mobObject, this.transform, true);
-        gameController.mob = mob.gameObject;
+        gameController.SetMob(mob.gameObject);
     }
 
     private void Update()
     {
-        if(gameObject.transform.childCount == 0)
+        if (gameObject.transform.childCount == 0)
         {
             SpawnMobs();
         }
-     
-        mobHealthBar.value = mob.GetHealth();
     }
 }
