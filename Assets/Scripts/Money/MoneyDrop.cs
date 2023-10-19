@@ -14,9 +14,15 @@ public class MoneyDrop : MonoBehaviour
     public void DropCoin()
     {
         int rndCoinCount = UnityEngine.Random.Range(15, 1000);
-        //int amont = 0;
-        //if (rndCoinCount >= 100) amont = rnd / 50;
-        //if (rndCoinCount < 100) amont = rnd / 10;
+        int amont = 0;
+        if (rndCoinCount >= 100) amont = rndCoinCount / 100;
+        if (rndCoinCount < 100) amont = rndCoinCount / 20;
+        for (int i = 0; i < amont; i++)
+        {
+            float randomX = UnityEngine.Random.Range(-1f, 1f);
+            Vector2 whereToSpawn = new Vector2(randomX, this.transform.position.y);
+            Instantiate(coinSprite, whereToSpawn, Quaternion.identity);
+        }
         coin.AddCoin(rndCoinCount);
         ñhangedCoinText?.Invoke(rndCoinCount);
     }

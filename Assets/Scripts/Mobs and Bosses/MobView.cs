@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,8 +6,9 @@ public class MobView : MonoBehaviour
 {
     [SerializeField] private Image mobSprite;
     [SerializeField] private Slider mobHealthBar;
+    [SerializeField] private Animation animationShaking;
 
-    [SerializeField] public GameObject mob;
+    private GameObject mob;
 
     private void OnEnable()
     {
@@ -25,6 +27,10 @@ public class MobView : MonoBehaviour
         mobSprite.sprite = this.mob.GetComponent<Mob>().GetSprite();
     }
 
+    public void ShakeMob()
+    {
+        animationShaking.Play();
+    }
 
     private void Update()
     {
