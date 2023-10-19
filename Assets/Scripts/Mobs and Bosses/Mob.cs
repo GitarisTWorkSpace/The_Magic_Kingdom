@@ -27,6 +27,11 @@ public class Mob : MonoBehaviour, IDamageble
         return health; 
     }
 
+    public float GetMaxHealth()
+    {
+        return mobModel.GetHealth();
+    }
+
     private void Update()
     {
         if (health <= 0)

@@ -8,10 +8,23 @@ public class MobView : MonoBehaviour
 
     [SerializeField] public GameObject mob;
 
-    public void SetSpraitMob()
+    private void OnEnable()
     {
-        mobSprite.sprite = mob.GetComponent<Mob>().GetSprite();
+        SpawnerMobsController.instantiatedMob += SetMobInfo;
     }
+
+    private void OnDisable()
+    {
+        SpawnerMobsController.instantiatedMob -= SetMobInfo;
+    }
+
+    public void SetMobInfo(GameObject mob)
+    {
+        this.mob = mob;
+        mobHealthBar.maxValue = this.mob.GetComponent<Mob>().GetMaxHealth();
+        mobSprite.sprite = this.mob.GetComponent<Mob>().GetSprite();
+    }
+
 
     private void Update()
     {
