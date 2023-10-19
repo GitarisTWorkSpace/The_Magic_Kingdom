@@ -7,6 +7,7 @@ public class MenuController : MonoBehaviour
 {
     [SerializeField] private Slider loadingBar;
     [SerializeField] private float waitingTime;
+    [SerializeField] private GameObject loading;
 
     private void Start()
     {
@@ -21,6 +22,11 @@ public class MenuController : MonoBehaviour
     private void MoveToGameScene()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void StartAnimation()
+    {
+        loading.GetComponent<Animation>().Play();
     }
 
     private IEnumerator LoadingGaneScene()

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Mob : MonoBehaviour, IDamageble
 {
     [SerializeField] public MobModel mobModel;
+    [SerializeField] public MoneyDrop drop;
     [SerializeField] private float health;
 
     private void Start()
@@ -26,8 +27,18 @@ public class Mob : MonoBehaviour, IDamageble
         return health; 
     }
 
+    public float GetMaxHealth()
+    {
+        return mobModel.GetHealth();
+    }
+
     private void Update()
     {
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            drop.DropCoin();
+            drop.DropCristal(mobModel.GetCristalChanceDrop());
+            Destroy(gameObject); 
+        }
     }
 }

@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 public class SpawnerMobsController : MonoBehaviour
 {
     [Header("Ojects")]
-    [SerializeField] private GameController gameController;
-    [SerializeField] private Mob mobObject;
+    [SerializeField] private MoneyDrop drop;
+    [SerializeField] private Mob mobPrefab;
     [SerializeField] private MobModel[] mobList;
     private Mob mob;
+
+    public static Action<GameObject> instantiatedMob;
 
     private void Start()
     {
@@ -15,10 +18,11 @@ public class SpawnerMobsController : MonoBehaviour
 
     private void SpawnMobs()
     {
-        int index = Random.Range(0, mobList.Length);
-        mobObject.mobModel = mobList[index];
-        mob = Instantiate(mobObject, this.transform, true);
-        gameController.SetMob(mob.gameObject);
+        int index = UnityEngine.Random.Range(0, mobList.Length);
+        mobPrefab.drop = drop;
+        mobPrefab.mobModel = mobList[index];
+        mob = Instantiate(mobPrefab, this.transform, true);
+        instantiatedMob?.Invoke(mob.gameObject);
     }
 
     private void Update()

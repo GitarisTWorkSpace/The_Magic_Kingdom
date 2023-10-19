@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 106f13e9126225740a7f41e262b0ff26, type: 3}
   health: 100
+  cristalChanceDrop: 5
