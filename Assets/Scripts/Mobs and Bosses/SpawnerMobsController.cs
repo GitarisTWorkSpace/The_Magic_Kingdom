@@ -4,7 +4,8 @@ public class SpawnerMobsController : MonoBehaviour
 {
     [Header("Ojects")]
     [SerializeField] private GameController gameController;
-    [SerializeField] private Mob mobObject;
+    [SerializeField] private MoneyDrop drop;
+    [SerializeField] private Mob mobPrefab;
     [SerializeField] private MobModel[] mobList;
     private Mob mob;
 
@@ -16,8 +17,9 @@ public class SpawnerMobsController : MonoBehaviour
     private void SpawnMobs()
     {
         int index = Random.Range(0, mobList.Length);
-        mobObject.mobModel = mobList[index];
-        mob = Instantiate(mobObject, this.transform, true);
+        mobPrefab.drop = drop;
+        mobPrefab.mobModel = mobList[index];
+        mob = Instantiate(mobPrefab, this.transform, true);
         gameController.SetMob(mob.gameObject);
     }
 
