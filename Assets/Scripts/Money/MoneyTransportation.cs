@@ -1,18 +1,16 @@
+using System.Collections;
 using UnityEngine;
 
 public class MoneyTransportation : MonoBehaviour
 {
-    [SerializeField] private GameObject coinEndPoint;
-    [SerializeField] private GameObject cristalEndPoint;
+    [SerializeField] private float destroyTime;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Coin")
+        if(collision.tag == "Coin" || collision.tag == "Cristal")
         {
-            collision.transform.position = coinEndPoint.transform.position;
-        }
-        else if (collision.tag == "Cristal")
-        {
-            collision.transform.position = coinEndPoint.transform.position;
+            collision.GetComponent<Rigidbody2D>().simulated = false;
+            collision.GetComponent<Animation>().Play();
+            Destroy(collision.gameObject, destroyTime);
         }
     }
 }

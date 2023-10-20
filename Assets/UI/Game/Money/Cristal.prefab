@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5999154117231983086}
   - component: {fileID: 4154740275193114405}
   - component: {fileID: 919159526003594651}
+  - component: {fileID: 2875159569066229258}
   m_Layer: 0
   m_Name: Cristal
   m_TagString: Cristal
@@ -133,3 +134,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!111 &2875159569066229258
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287538262630725250}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 40b2e202cbdb25744b01a6a36d4e9669, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 40b2e202cbdb25744b01a6a36d4e9669, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
