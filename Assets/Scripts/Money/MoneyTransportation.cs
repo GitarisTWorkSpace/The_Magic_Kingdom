@@ -10,5 +10,9 @@ public class MoneyTransportation : MonoBehaviour
         {
             collision.transform.position = coinEndPoint.transform.position;
         }
+        else if (collision.tag == "Cristal")
+        {
+            collision.transform.position = coinEndPoint.transform.position;
+        }
     }
 }

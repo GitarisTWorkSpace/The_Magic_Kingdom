@@ -33,6 +33,12 @@ public class MoneyDrop : MonoBehaviour
         if(chanseRnd <= chanse)
         {
             int rndCristalCount = UnityEngine.Random.Range(1, 3);
+            for (int i = 0; i < rndCristalCount; i++)
+            {
+                float randomX = UnityEngine.Random.Range(-1f, 1f);
+                Vector2 whereToSpawn = new Vector2(randomX, this.transform.position.y);
+                Instantiate(cristalSprite, whereToSpawn, Quaternion.identity);
+            }
             cristal.AddCristals(rndCristalCount);
             changedCristalText?.Invoke(rndCristalCount);
         }
