@@ -20,7 +20,7 @@ public class MoneyDrop : MonoBehaviour
         for (int i = 0; i < amont; i++)
         {
             float randomX = UnityEngine.Random.Range(-1f, 1f);
-            Vector2 whereToSpawn = new Vector2(randomX, this.transform.position.y);
+            Vector3 whereToSpawn = new Vector3(randomX, this.transform.position.y, 1f);
             Instantiate(coinSprite, whereToSpawn, Quaternion.identity);
         }
         coin.AddCoin(rndCoinCount);
@@ -36,7 +36,7 @@ public class MoneyDrop : MonoBehaviour
             for (int i = 0; i < rndCristalCount; i++)
             {
                 float randomX = UnityEngine.Random.Range(-1f, 1f);
-                Vector2 whereToSpawn = new Vector2(randomX, this.transform.position.y);
+                Vector3 whereToSpawn = new Vector3(randomX, this.transform.position.y, 1f);
                 Instantiate(cristalSprite, whereToSpawn, Quaternion.identity);
             }
             cristal.AddCristals(rndCristalCount);
