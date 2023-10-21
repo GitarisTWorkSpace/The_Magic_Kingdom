@@ -20,7 +20,8 @@ public class MoneyDrop : MonoBehaviour
         for (int i = 0; i < amont; i++)
         {
             float randomX = UnityEngine.Random.Range(-1f, 1f);
-            Vector2 whereToSpawn = new Vector2(randomX, this.transform.position.y);
+            float randomY = UnityEngine.Random.Range(-1f, 1f);
+            Vector3 whereToSpawn = new Vector3(randomX, randomY, 2f);
             Instantiate(coinSprite, whereToSpawn, Quaternion.identity);
         }
         coin.AddCoin(rndCoinCount);
@@ -33,6 +34,12 @@ public class MoneyDrop : MonoBehaviour
         if(chanseRnd <= chanse)
         {
             int rndCristalCount = UnityEngine.Random.Range(1, 3);
+            for (int i = 0; i < rndCristalCount; i++)
+            {
+                float randomX = UnityEngine.Random.Range(-1f, 1f);
+                Vector3 whereToSpawn = new Vector3(randomX, this.transform.position.y, 1f);
+                Instantiate(cristalSprite, whereToSpawn, Quaternion.identity);
+            }
             cristal.AddCristals(rndCristalCount);
             changedCristalText?.Invoke(rndCristalCount);
         }
