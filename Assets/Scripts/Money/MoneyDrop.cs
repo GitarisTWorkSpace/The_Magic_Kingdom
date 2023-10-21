@@ -20,7 +20,8 @@ public class MoneyDrop : MonoBehaviour
         for (int i = 0; i < amont; i++)
         {
             float randomX = UnityEngine.Random.Range(-1f, 1f);
-            Vector3 whereToSpawn = new Vector3(randomX, this.transform.position.y, 1f);
+            float randomY = UnityEngine.Random.Range(-1f, 1f);
+            Vector3 whereToSpawn = new Vector3(randomX, randomY, 2f);
             Instantiate(coinSprite, whereToSpawn, Quaternion.identity);
         }
         coin.AddCoin(rndCoinCount);

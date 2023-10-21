@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bleba
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 4067b8e70c40ba347a9d12abc7a0940d, type: 3}
-  health: 100
-  cristalChanceDrop: 5
+  health: 250
+  cristalChanceDrop: 100
