@@ -30,7 +30,7 @@ public class MoneyDrop : MonoBehaviour
 
     public void DropCristal(int chanse)
     {        
-        int chanseRnd = UnityEngine.Random.Range(1, 100);
+        float chanseRnd = UnityEngine.Random.Range(1f, 100f);
         if(chanseRnd <= chanse)
         {
             int rndCristalCount = UnityEngine.Random.Range(1, 3);
