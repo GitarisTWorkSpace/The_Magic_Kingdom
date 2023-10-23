@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc64e76c787b4b4b817bf3501a7f419, type: 3}
-  m_Name: Mob
+  m_Name: WinesWith
   m_EditorClassIdentifier: 
-  mobSprite: {fileID: 0}
-  health: 0
-  cristalChanceDrop: 0
+  mobSprite: {fileID: 21300000, guid: 7702139766c066a4593aaf7cfd4a085c, type: 3}
+  health: 125
+  cristalChanceDrop: 75

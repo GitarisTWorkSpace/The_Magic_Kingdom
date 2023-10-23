@@ -28,7 +28,7 @@ public class MoneyDrop : MonoBehaviour
         ñhangedCoinText?.Invoke(rndCoinCount);
     }
 
-    public void DropCristal(int chanse)
+    public void DropCristal(float chanse)
     {        
         float chanseRnd = UnityEngine.Random.Range(1f, 100f);
         if(chanseRnd <= chanse)

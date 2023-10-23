@@ -5,7 +5,7 @@ public class MobModel : ScriptableObject
 {
     [SerializeField] private Sprite mobSprite;
     [SerializeField] private float health;
-    [SerializeField] private int cristalChanceDrop;
+    [SerializeField] private float cristalChanceDrop;
     public float GetHealth()
     {
         return health;
@@ -16,7 +16,7 @@ public class MobModel : ScriptableObject
         return mobSprite;
     }
 
-    public int GetCristalChanceDrop()
+    public float GetCristalChanceDrop()
     {
         return cristalChanceDrop;
     }

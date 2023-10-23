@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc64e76c787b4b4b817bf3501a7f419, type: 3}
-  m_Name: Stone
+  m_Name: WindElemental
   m_EditorClassIdentifier: 
-  mobSprite: {fileID: 21300000, guid: f87b21fe5d741eb47a6dd5e9c7a2f71e, type: 3}
-  health: 250
-  cristalChanceDrop: 10
+  mobSprite: {fileID: 21300000, guid: ae6060a4a6946f84494a228ea8464c13, type: 3}
+  health: 83
+  cristalChanceDrop: 0.5
