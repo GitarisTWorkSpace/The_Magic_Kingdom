@@ -1,56 +1,59 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LoadingController : MonoBehaviour
 {
-    [SerializeField] private Animator loadingAnimator;
+    [SerializeField] private AdviceView adviceView;
     [SerializeField] private Slider loadingBar;
-    [SerializeField] private enum TypeLoading 
-    {
-        Scene,
-        Location
-    }
-    [SerializeField] private TypeLoading typeLoading;
+    [SerializeField] private Animator loadingAnimator;
+
+    [SerializeField] private float waitingTime;
 
     private AsyncOperation loadingSceneOperation;
 
+    private static bool shouldPlayOffAnimation = false;
+        
     private void Start()
     {
-        loadingBar.maxValue = 100f;
-        loadingAnimator = GetComponent<Animator>();
+        if (shouldPlayOffAnimation) StartCoroutine(EndLoadGameScane());
+        adviceView.SetAdviceText();
     }
 
     public void StartGame()
     {
         gameObject.SetActive(true);
-        if (typeLoading == TypeLoading.Scene)
-            LoadNewScene();
-        else if (typeLoading == TypeLoading.Location)
-            LoadNewLocation();
+        loadingAnimator.SetTrigger("SceneStart");
+        LoadGameScene();
     }    
 
     public void OnAnimationOver()
     {
-        if (typeLoading == TypeLoading.Scene)
-            loadingSceneOperation.allowSceneActivation = true;
-        else if (typeLoading == TypeLoading.Location)
-            loadingAnimator.Play("OffLoading");
+        shouldPlayOffAnimation = true;
+        loadingSceneOperation.allowSceneActivation = true;
     }
 
-    public void HiddenPanel() => gameObject.SetActive(false);
-
-    private void LoadNewScene()
+    public void OffAnimationOver()
     {
-        loadingAnimator.Play("OnLoading");
-        loadingSceneOperation =  SceneManager.LoadSceneAsync("Game");
+        gameObject.SetActive(false);
+    }
+
+    private void LoadGameScene()
+    {        
+        loadingSceneOperation = SceneManager.LoadSceneAsync("Game");
         loadingSceneOperation.allowSceneActivation = false;
-        typeLoading = TypeLoading.Scene;
     }
 
-    private void LoadNewLocation() 
+    private void Update()
     {
-        loadingAnimator.Play("OnLoading");
-        typeLoading = TypeLoading.Location;
+        if (loadingSceneOperation != null)
+            loadingBar.value = loadingSceneOperation.progress;
+    }
+
+    private IEnumerator EndLoadGameScane()
+    {
+        yield return new WaitForSeconds(waitingTime);
+        loadingAnimator.SetTrigger("SceneEnd");
     }
 }

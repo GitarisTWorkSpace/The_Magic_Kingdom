@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Advice", menuName = "Models/Advice")]
 public class AdviceModel : ScriptableObject
 {
-    [SerializeField] private string adviceText;
+    [SerializeField] [TextArea(4, 6)] private string adviceText;
 
     public string GetAdvice() => adviceText;
 }

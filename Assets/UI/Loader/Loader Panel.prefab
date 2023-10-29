@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 1100, y: 191.4}
+  m_AnchoredPosition: {x: -5.8, y: -30.5}
+  m_SizeDelta: {x: 949.1, y: 172.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5561739190297288614
 CanvasRenderer:
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_fontSize: 56
   m_fontSizeBase: 56
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 56
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -650,6 +650,8 @@ GameObject:
   - component: {fileID: 5561739192118434213}
   - component: {fileID: 8637275312173367491}
   - component: {fileID: 3934952025777756461}
+  - component: {fileID: 2630923172118033095}
+  - component: {fileID: 8981792587726849170}
   m_Layer: 5
   m_Name: Loader Panel
   m_TagString: Untagged
@@ -751,10 +753,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442dd55349d2ffc4da01cd00697a0b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingPanel: {fileID: 5561739192118434215}
-  loadingAnimator: {fileID: 8637275312173367491}
+  adviceView: {fileID: 8981792587726849170}
   loadingBar: {fileID: 5561739192362286485}
-  typeLoading: 0
+  loadingAnimator: {fileID: 8637275312173367491}
+  waitingTime: 3
+--- !u!114 &2630923172118033095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561739192118434215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f009a38a9c4ef74f9ab7646b593461b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  advices:
+  - {fileID: 11400000, guid: 6f4e8151da859f547bdf691f5cf15f68, type: 2}
+  - {fileID: 11400000, guid: e7d103e79cfbf754c86fa30fae46e5b1, type: 2}
+  - {fileID: 11400000, guid: 80afe46b677cfdc40b18c909087e7078, type: 2}
+  - {fileID: 11400000, guid: 6ad70123e73d6b94482a56053248d29e, type: 2}
+  - {fileID: 11400000, guid: c0d3b0eae10e7fe48961548e6bbfb0d0, type: 2}
+  - {fileID: 11400000, guid: f5f91e34a882d234f855dcae439e707f, type: 2}
+--- !u!114 &8981792587726849170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561739192118434215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f023fc8ce551cdb4c9510d7210c6581b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 2630923172118033095}
+  adviceText: {fileID: 5561739190297288615}
 --- !u!1 &5561739192362286487
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +876,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

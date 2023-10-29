@@ -2095,7 +2095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &290537705
 Transform:
   m_ObjectHideFlags: 0
@@ -2125,7 +2125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 1278561540}
   adviceView: {fileID: 0}
-  waitingTime: 1.5
+  waitingTime: 3
 --- !u!1 &295257731
 GameObject:
   m_ObjectHideFlags: 0
@@ -8160,6 +8160,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5561739192118434215, guid: e439a5cbd439a59448536c4fbdb01fcc, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561739192362286485, guid: e439a5cbd439a59448536c4fbdb01fcc, type: 3}
+      propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
