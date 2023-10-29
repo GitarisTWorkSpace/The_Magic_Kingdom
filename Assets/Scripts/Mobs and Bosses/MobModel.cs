@@ -5,19 +5,26 @@ public class MobModel : ScriptableObject
 {
     [SerializeField] private Sprite mobSprite;
     [SerializeField] private float health;
+
+    [Header("Cristal")]
     [SerializeField] private float cristalChanceDrop;
-    public float GetHealth()
-    {
-        return health;
-    }
+    [SerializeField] private int minCristalValue;
+    [SerializeField] private int maxCristalValue;
+    [SerializeField] private int multiplyCristalValue;
 
-    public Sprite GetSprite()
-    {
-        return mobSprite;
-    }
+    [Header("Coin")]
+    [SerializeField] private int minCoinValue;
+    [SerializeField] private int maxCoinValue;
+    [SerializeField] private int multiplyCoinValue;
 
-    public float GetCristalChanceDrop()
-    {
-        return cristalChanceDrop;
-    }
+    public float GetHealth() => health;
+    public Sprite GetSprite() => mobSprite;
+    public float GetCristalChanceDrop() => cristalChanceDrop;
+    public int GetMinCristalValue() => minCristalValue;
+    public int GetMaxCristalValue() => maxCristalValue;
+    public int GetMultiplyCristalValue() => multiplyCristalValue;
+    public int GetMinCoinValue() => minCoinValue;
+    public int GetMaxCoinValue() => maxCoinValue;
+    public int GetMultiplyCoinValue() => multiplyCoinValue;
+
 }

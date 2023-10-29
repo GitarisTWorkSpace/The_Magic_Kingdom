@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameSceneController : MonoBehaviour
 {
     [SerializeField] private GameObject loadingPanel;
+    [SerializeField] private AdviceView adviceView;
     [SerializeField] private float waitingTime;
 
     private void Start()
