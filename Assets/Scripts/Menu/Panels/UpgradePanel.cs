@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OpenUpgradePanel : MonoBehaviour
+public class UpgradePanel : MonoBehaviour
 {
     [SerializeField] private Animation animPanel;
     [SerializeField] private AnimationClip[] animPanelClips;
@@ -24,5 +24,13 @@ public class OpenUpgradePanel : MonoBehaviour
             animPanel.clip = animPanelClips[0];
             isOpen = true;
         }
+    }
+
+    public void CloseUpgradePanel()
+    {
+        animPanel.clip = animPanelClips[1];
+        animPanel.Play();
+        animPanel.clip = animPanelClips[0];
+        isOpen = true;
     }
 }

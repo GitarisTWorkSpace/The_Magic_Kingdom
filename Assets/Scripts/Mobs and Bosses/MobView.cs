@@ -1,4 +1,4 @@
-using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +7,7 @@ public class MobView : MonoBehaviour
     [SerializeField] private Image mobSprite;
     [SerializeField] private Slider mobHealthBar;
     [SerializeField] private Animation animationShaking;
+    [SerializeField] private TMP_Text healthPointText;
 
     private GameObject mob;
 
@@ -34,6 +35,10 @@ public class MobView : MonoBehaviour
 
     private void Update()
     {
-        if(mob != null) mobHealthBar.value = mob.GetComponent<Mob>().GetHealth();
+        if(mob != null)
+        {
+            mobHealthBar.value = mob.GetComponent<Mob>().GetHealth();
+            healthPointText.text = mob.GetComponent<Mob>().GetHealth().ToString();
+        }
     }
 }

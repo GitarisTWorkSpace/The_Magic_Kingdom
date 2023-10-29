@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 350
   cristalChanceDrop: 25
   minCristalValue: 1
-  maxCristalValue: 3
+  maxCristalValue: 9
   multiplyCristalValue: 1
   minCoinValue: 15
   maxCoinValue: 1000

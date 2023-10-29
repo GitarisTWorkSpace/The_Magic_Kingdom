@@ -18,6 +18,6 @@ MonoBehaviour:
   minCristalValue: 1
   maxCristalValue: 3
   multiplyCristalValue: 1
-  minCoinValue: 15
-  maxCoinValue: 1000
-  multiplyCoinValue: 1
+  minCoinValue: 0
+  maxCoinValue: 5000
+  multiplyCoinValue: 1.2

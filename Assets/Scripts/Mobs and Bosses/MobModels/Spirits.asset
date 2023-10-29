@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spirits
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 3b9fbb365df4d4c44ae7dd8d3690409b, type: 3}
-  health: 75
+  health: 69
   cristalChanceDrop: 3
   minCristalValue: 1
   maxCristalValue: 3

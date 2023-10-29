@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Blobs 1
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 83e5423f707e2c842b94a5b9a37716f0, type: 3}
-  health: 75
-  cristalChanceDrop: 1
+  health: 65
+  cristalChanceDrop: 0.6
+  minCristalValue: 1
+  maxCristalValue: 2
+  multiplyCristalValue: 0.5
+  minCoinValue: 15
+  maxCoinValue: 1000
+  multiplyCoinValue: 0.4

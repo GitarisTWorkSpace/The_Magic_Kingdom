@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: WindElemental
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: ae6060a4a6946f84494a228ea8464c13, type: 3}
-  health: 83
-  cristalChanceDrop: 0.5
+  health: 84
+  cristalChanceDrop: 15
   minCristalValue: 1
-  maxCristalValue: 3
+  maxCristalValue: 2
   multiplyCristalValue: 1
   minCoinValue: 15
   maxCoinValue: 1000

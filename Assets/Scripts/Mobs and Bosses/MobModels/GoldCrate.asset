@@ -15,9 +15,9 @@ MonoBehaviour:
   mobSprite: {fileID: 21300000, guid: 85e67760cffb1e842917a71f542f6ddc, type: 3}
   health: 75
   cristalChanceDrop: 0
-  minCristalValue: 1
-  maxCristalValue: 3
-  multiplyCristalValue: 1
-  minCoinValue: 15
-  maxCoinValue: 1000
-  multiplyCoinValue: 1
+  minCristalValue: 0
+  maxCristalValue: 0
+  multiplyCristalValue: 0
+  minCoinValue: 1500
+  maxCoinValue: 15000
+  multiplyCoinValue: 1.5
