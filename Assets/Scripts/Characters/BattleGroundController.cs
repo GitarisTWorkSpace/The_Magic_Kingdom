@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class BattleGroundController : MonoBehaviour
 {
     [SerializeField] private Character characterPrefab;
+    [SerializeField] private BattleGroundView view;
 
     [SerializeField] private GameObject[] characterPositions = new GameObject[4];
-    [SerializeField] private Image[] characterImagePositions;
 
     private GameObject mob;
 
@@ -14,16 +14,16 @@ public class BattleGroundController : MonoBehaviour
 
     public void CoisePosition(int index)
     {
-        if (characterImagePositions[index] != null && CheckDoubleCharacters())
+        if (characterPositions[index] != null && CheckDoubleCharacters())
         {
             Destroy(characterPositions[index].gameObject);
-            characterImagePositions[index].sprite = characterPrefab.GetCharacterSprite();
+            view.SetCharacterImage(characterPrefab.GetCharacterSprite(), index);
             characterPositions[index] = Instantiate(characterPrefab.gameObject, this.transform, true);
             characterPositions[index].GetComponent<Character>().SetMob(mob);
         }
         else if (characterPositions[index] == null && CheckDoubleCharacters())
         {
-            characterImagePositions[index].sprite = characterPrefab.GetCharacterSprite();
+            view.SetCharacterImage(characterPrefab.GetCharacterSprite(), index);
             characterPositions[index] = Instantiate(characterPrefab.gameObject, this.transform, true);
             characterPositions[index].GetComponent<Character>().SetMob(mob);
         }
