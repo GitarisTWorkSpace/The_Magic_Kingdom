@@ -253,7 +253,7 @@ PlayerSettings:
   AndroidTargetDevices: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: G:/Unity/Builds/The Magic Kingdom/TheMagicKingdom.keystore
+  AndroidKeystoreName: D:/Unity/Build/The Magic Kingdom/TheMagicKingdom.keystore
   AndroidKeyaliasName: gitarist.d
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
