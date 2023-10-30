@@ -100,7 +100,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 40b2e202cbdb25744b01a6a36d4e9669, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!54 &8896899946960910374
@@ -127,7 +127,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2287538262630725250}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2}

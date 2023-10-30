@@ -11,12 +11,18 @@ public class MoneyDrop : MonoBehaviour
     public static Action<int> ñhangedCoinText;
     public static Action<int> changedCristalText;
 
-    public void DropCoin()
-    {
-        int rndCoinCount = UnityEngine.Random.Range(15, 1000);
+    public void DropCoin(int minCoinValue, int maxCoinValue, float multiplyCoinValue)
+    {    
+        float rndCoinCount = UnityEngine.Random.Range(minCoinValue, maxCoinValue);
+
+        if (rndCoinCount != 0 && multiplyCoinValue != 0)
+            rndCoinCount *= multiplyCoinValue;
+
         int amont = 0;
-        if (rndCoinCount >= 100) amont = rndCoinCount / 100;
-        if (rndCoinCount < 100) amont = rndCoinCount / 20;
+        if (rndCoinCount >= 100) amont = (int)Mathf.Round(rndCoinCount / 100);
+        if (rndCoinCount < 100) amont = (int)Mathf.Round(rndCoinCount / 20);
+        if (amont >= 15) amont = 15;
+
         for (int i = 0; i < amont; i++)
         {
             float randomX = UnityEngine.Random.Range(-1f, 1f);
@@ -24,24 +30,28 @@ public class MoneyDrop : MonoBehaviour
             Vector3 whereToSpawn = new Vector3(randomX, randomY, 2f);
             Instantiate(coinSprite, whereToSpawn, Quaternion.identity);
         }
-        coin.AddCoin(rndCoinCount);
-        ñhangedCoinText?.Invoke(rndCoinCount);
+
+        coin.AddCoin((int)Mathf.Round(rndCoinCount));
+        ñhangedCoinText?.Invoke((int)Mathf.Round(rndCoinCount));
     }
 
-    public void DropCristal(int chanse)
+    public void DropCristal(float chanse, int minCristalValue, int maxCristalValue, float multiplyCristalValue)
     {        
-        int chanseRnd = UnityEngine.Random.Range(1, 100);
+        float chanseRnd = UnityEngine.Random.Range(1f, 100f);
         if(chanseRnd <= chanse)
         {
-            int rndCristalCount = UnityEngine.Random.Range(1, 3);
-            for (int i = 0; i < rndCristalCount; i++)
+            float rndCristalCount = UnityEngine.Random.Range(minCristalValue, maxCristalValue);
+            rndCristalCount *= multiplyCristalValue;
+
+            for (int i = 0; i < (int)Mathf.Round(rndCristalCount); i++)
             {
                 float randomX = UnityEngine.Random.Range(-1f, 1f);
                 Vector3 whereToSpawn = new Vector3(randomX, this.transform.position.y, 1f);
                 Instantiate(cristalSprite, whereToSpawn, Quaternion.identity);
             }
-            cristal.AddCristals(rndCristalCount);
-            changedCristalText?.Invoke(rndCristalCount);
+
+            cristal.AddCristals((int)Mathf.Round(rndCristalCount));
+            changedCristalText?.Invoke((int)Mathf.Round(rndCristalCount));
         }
     }
 }

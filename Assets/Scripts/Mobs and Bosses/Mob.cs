@@ -6,10 +6,9 @@ public class Mob : MonoBehaviour, IDamageble
     [SerializeField] public MoneyDrop drop;
     [SerializeField] private float health;
 
-    private void Start()
-    {
-        health = mobModel.GetHealth();
-    }
+    public Sprite GetSprite() => mobModel.GetSprite();
+    public float GetHealth() => health;
+    public float GetMaxHealth() => mobModel.GetHealth();
 
     public void TakeDemage(float damage)
     {
@@ -17,27 +16,17 @@ public class Mob : MonoBehaviour, IDamageble
         health -= damage;
     }
 
-    public Sprite GetSprite()
+    private void Start()
     {
-        return mobModel.GetSprite();
-    }
-
-    public float GetHealth() 
-    {
-        return health; 
-    }
-
-    public float GetMaxHealth()
-    {
-        return mobModel.GetHealth();
-    }
+        health = mobModel.GetHealth();
+    } 
 
     private void Update()
     {
         if (health <= 0)
         {
-            drop.DropCoin();
-            drop.DropCristal(mobModel.GetCristalChanceDrop());
+            drop.DropCoin(mobModel.GetMinCoinValue(), mobModel.GetMaxCoinValue(), mobModel.GetMultiplyCoinValue());
+            drop.DropCristal(mobModel.GetCristalChanceDrop(), mobModel.GetMinCristalValue(), mobModel.GetMaxCristalValue(), mobModel.GetMultiplyCristalValue());
             Destroy(gameObject); 
         }
     }
