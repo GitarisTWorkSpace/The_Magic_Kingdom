@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Mob : MonoBehaviour, IDamageble
@@ -5,6 +6,8 @@ public class Mob : MonoBehaviour, IDamageble
     [SerializeField] public MobModel mobModel;
     [SerializeField] public MoneyDrop drop;
     [SerializeField] private float health;
+
+    public static Action takedDamage;
 
     public Sprite GetSprite() => mobModel.GetSprite();
     public float GetHealth() => health;
@@ -14,6 +17,7 @@ public class Mob : MonoBehaviour, IDamageble
     {
         if (damage < 0) return;
         health -= damage;
+        takedDamage?.Invoke();
     }
 
     private void Start()

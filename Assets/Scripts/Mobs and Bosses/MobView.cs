@@ -14,11 +14,13 @@ public class MobView : MonoBehaviour
     private void OnEnable()
     {
         SpawnerMobsController.instantiatedMob += SetMobInfo;
+        Mob.takedDamage += ShakeMob;
     }
 
     private void OnDisable()
     {
         SpawnerMobsController.instantiatedMob -= SetMobInfo;
+        Mob.takedDamage -= ShakeMob;
     }
 
     public void SetMobInfo(GameObject mob)
