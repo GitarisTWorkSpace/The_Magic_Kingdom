@@ -1220,8 +1220,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109787790}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05214298, y: -4.3302894, z: -0.08604084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2754,6 +2754,8 @@ MonoBehaviour:
   coin: {fileID: 1103660648}
   coinSprite: {fileID: 3604523530690416618, guid: 30fdaf3151df1ea46ae518a25a59ea0f, type: 3}
   cristalSprite: {fileID: 2287538262630725250, guid: 5cf69642415095a49a19475789593670, type: 3}
+  xPositionSpawn: {x: -1, y: 1}
+  yPositionSpawn: {x: -0.3, y: 2.7}
 --- !u!4 &257034701
 Transform:
   m_ObjectHideFlags: 0
@@ -2762,7 +2764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257034698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.33, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3088,6 +3090,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315974335}
   m_CullTransparentMesh: 1
+--- !u!1 &343361829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343361830}
+  - component: {fileID: 343361831}
+  m_Layer: 0
+  m_Name: InfoAboutPlayGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343361830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343361829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083787814}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343361831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343361829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33cc0bbec807e344867d7fd6731feb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobHealthPointText: {fileID: 465321077}
 --- !u!1 &356785863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,8 +3231,22 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u0412\u0435\u043B\u0438\u043A\u043E\u0440\u0443\u0441\u0441\u0440\u0438\u0439
-            \u0437\u0430\u0445\u0432\u0430\u0442 \u0442\u0435\u043D\u0442\u0430\u043A\u043B\u044F\u043C\u0438"
+          m_StringArgument: "\u0412\u0438\u0434\u0438\u0442 \u0435\u0432\u0440\u0435\u0439
+            \u043C\u043E\u043D\u0435\u0442\u043A\u0430 \u043B\u0435\u0436\u0438\u0442,
+            \u043D\u0430\u043A\u043B\u043E\u043D\u0438\u043B\u0441\u044F, \u0430
+            \u0435\u0433\u043E ..."
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1848150318}
+        m_TargetAssemblyTypeName: BattleGroundController, Assembly-CSharp
+        m_MethodName: ChouiseCharacter
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 6729d658f5df6354ebd8fe7c92c33596, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CharacterModel, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &356785866
@@ -3573,8 +3634,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426864887}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05214298, y: -4.3302894, z: -0.08604084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3816,6 +3877,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2066455789}
+        m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
+        m_MethodName: CloseUpgradePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &435972611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3966,7 +4039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -20.5}
+  m_AnchoredPosition: {x: 0, y: 218}
   m_SizeDelta: {x: 0, y: -647.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444763520
@@ -4024,7 +4097,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4553,7 +4626,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2066455791}
+      - m_Target: {fileID: 343361831}
         m_TargetAssemblyTypeName: InfoPanel, Assembly-CSharp
         m_MethodName: HiddenInfo
         m_Mode: 1
@@ -6496,8 +6569,20 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u0412\u0435\u043B\u0438\u043A\u043E\u0440\u0443\u0441\u0441\u0440\u0438\u0439
-            \u0437\u0430\u0445\u0432\u0430\u0442 \u0442\u0435\u043D\u0442\u0430\u043A\u043B\u044F\u043C\u0438"
+          m_StringArgument: "\u0423 \u0442\u0435\u0431\u044F \u043E\u0447\u0435\u043D\u044C
+            \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0435 \"\u0433\u043B\u0430\u0437\u0430\""
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1848150318}
+        m_TargetAssemblyTypeName: BattleGroundController, Assembly-CSharp
+        m_MethodName: ChouiseCharacter
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: b0185cd1a3d1fa542bde857aaf5898ed, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CharacterModel, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1009105253
@@ -7116,13 +7201,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083787813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05214298, y: 4.3302894, z: 0.08604084}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 426864889}
   - {fileID: 109787792}
   - {fileID: 1848150317}
+  - {fileID: 343361830}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8273,8 +8359,23 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u0412\u0435\u043B\u0438\u043A\u043E\u0440\u0443\u0441\u0441\u0440\u0438\u0439
-            \u0437\u0430\u0445\u0432\u0430\u0442 \u0442\u0435\u043D\u0442\u0430\u043A\u043B\u044F\u043C\u0438"
+          m_StringArgument: "\u0412 \u043C\u0438\u0440\u0435 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C
+            \u0435\u0449\u0451 99% \u043F\u043E\u0440\u0447\u0438. \u0422\u0435\u0431\u0435
+            \u043D\u0443\u0436\u043D\u043E \u0445\u043E\u0440\u043E\u0448\u043E \u043F\u043E\u0441\u0442\u0430\u0440\u0430\u0442\u044C\u0441\u044F.
+            \u041E\u0439... \u044D\u0442\u043E \u043D\u0435 \u0437\u0434\u0435\u0441\u044C
+            \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u044C\u0441\u044F"
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1848150318}
+        m_TargetAssemblyTypeName: BattleGroundController, Assembly-CSharp
+        m_MethodName: ChouiseCharacter
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2ce75ca977a37d244911d9291ad32424, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CharacterModel, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1257387073
@@ -10859,7 +10960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   someText: {fileID: 444763520}
-  tomeToCleare: 5
+  timeToCleare: 3
 --- !u!4 &1848150317
 Transform:
   m_ObjectHideFlags: 0
@@ -10867,8 +10968,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848150315}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8566018, y: -8.209961, z: -3.7926767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10889,11 +10990,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 8288848928077176708, guid: 594a459d9894985478576ed065702116, type: 3}
   view: {fileID: 1848150319}
+  cleareTime: 15
   characterPositions:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  instanseCharacter: {fileID: 0}
 --- !u!114 &1848150319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10906,6 +11009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a759253af09d3b4f9d54f9c9259ee07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cleareTime: 5
   numberPositionImages:
   - {fileID: 143850819}
   - {fileID: 2112137110}
@@ -11767,6 +11871,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2066455789}
+        m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
+        m_MethodName: CloseUpgradePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2048832605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12088,7 +12204,6 @@ GameObject:
   - component: {fileID: 2066455786}
   - component: {fileID: 2066455789}
   - component: {fileID: 2066455788}
-  - component: {fileID: 2066455791}
   m_Layer: 5
   m_Name: Upgrade Panel
   m_TagString: Untagged
@@ -12189,19 +12304,6 @@ MonoBehaviour:
   animPanelClips:
   - {fileID: 7400000, guid: 40d8f269890f6554a85024f3820a98fb, type: 2}
   - {fileID: 7400000, guid: 36ee2af8bc9467348a19d0f5a54af05e, type: 2}
---- !u!114 &2066455791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066455784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b33cc0bbec807e344867d7fd6731feb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mobHealthPointText: {fileID: 465321077}
 --- !u!1 &2088114624
 GameObject:
   m_ObjectHideFlags: 0
@@ -13089,8 +13191,20 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u0412\u0435\u043B\u0438\u043A\u043E\u0440\u0443\u0441\u0441\u0440\u0438\u0439
-            \u0437\u0430\u0445\u0432\u0430\u0442 \u0442\u0435\u043D\u0442\u0430\u043A\u043B\u044F\u043C\u0438"
+          m_StringArgument: "\u041A\u0430\u0431\u0443\u043C? \u0414\u0430, \u0420\u043E\u0431\u0431\u0438,
+            \u043A\u0430\u0431\u0443\u043C!"
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1848150318}
+        m_TargetAssemblyTypeName: BattleGroundController, Assembly-CSharp
+        m_MethodName: ChouiseCharacter
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a7f38777de74b944482bd89b5522bcb7, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CharacterModel, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3816944027129623949
@@ -13385,9 +13499,57 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1848150316}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1848150318}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1848150315}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChouiseCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BattleGroundController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: BattleGroundController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 980bd6f0b2eca334384334289ebd27a9, type: 2}
+    - target: {fileID: 7815990973010755685, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CharacterModel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8561070284160997778, guid: 432d6eb6895f7f24c88befe501c41100, type: 3}
       propertyPath: m_Name
       value: Walter Grace Button

@@ -8,31 +8,29 @@ public class MoneyDrop : MonoBehaviour
     [SerializeField] private GameObject coinSprite;
     [SerializeField] private GameObject cristalSprite;
 
+    [SerializeField] private Vector2 xPositionSpawn;
+    [SerializeField] private Vector2 yPositionSpawn;
+
     public static Action<int> ñhangedCoinText;
     public static Action<int> changedCristalText;
 
     public void DropCoin(int minCoinValue, int maxCoinValue, float multiplyCoinValue)
     {    
-        float rndCoinCount = UnityEngine.Random.Range(minCoinValue, maxCoinValue);
+        int rndCoinAmount = GetRandomAmountMoney(minCoinValue, maxCoinValue);
+        rndCoinAmount = MultiplyAmountMoney(rndCoinAmount, multiplyCoinValue);
 
-        if (rndCoinCount != 0 && multiplyCoinValue != 0)
-            rndCoinCount *= multiplyCoinValue;
+        if (rndCoinAmount == 0) return;
 
-        int amont = 0;
-        if (rndCoinCount >= 100) amont = (int)Mathf.Round(rndCoinCount / 100);
-        if (rndCoinCount < 100) amont = (int)Mathf.Round(rndCoinCount / 20);
-        if (amont >= 15) amont = 15;
+        int spawnCoinAmount = 0;
+        if (rndCoinAmount >= 100) spawnCoinAmount = rndCoinAmount / 100;
+        if (rndCoinAmount < 100) spawnCoinAmount = rndCoinAmount / 20;
+        if (spawnCoinAmount >= 15) spawnCoinAmount = 15;
 
-        for (int i = 0; i < amont; i++)
-        {
-            float randomX = UnityEngine.Random.Range(-1f, 1f);
-            float randomY = UnityEngine.Random.Range(-1f, 1f);
-            Vector3 whereToSpawn = new Vector3(randomX, randomY, 2f);
-            Instantiate(coinSprite, whereToSpawn, Quaternion.identity);
-        }
+        SpawnCountItemOfMoney(spawnCoinAmount, coinSprite);
 
-        coin.AddCoin((int)Mathf.Round(rndCoinCount));
-        ñhangedCoinText?.Invoke((int)Mathf.Round(rndCoinCount));
+        coin.AddCoin(rndCoinAmount);
+
+        ñhangedCoinText?.Invoke(rndCoinAmount);
     }
 
     public void DropCristal(float chanse, int minCristalValue, int maxCristalValue, float multiplyCristalValue)
@@ -40,18 +38,43 @@ public class MoneyDrop : MonoBehaviour
         float chanseRnd = UnityEngine.Random.Range(1f, 100f);
         if(chanseRnd <= chanse)
         {
-            float rndCristalCount = UnityEngine.Random.Range(minCristalValue, maxCristalValue);
-            rndCristalCount *= multiplyCristalValue;
+            int rndCristalAmount = GetRandomAmountMoney(minCristalValue, maxCristalValue);
+            rndCristalAmount = MultiplyAmountMoney(rndCristalAmount, multiplyCristalValue);
 
-            for (int i = 0; i < (int)Mathf.Round(rndCristalCount); i++)
-            {
-                float randomX = UnityEngine.Random.Range(-1f, 1f);
-                Vector3 whereToSpawn = new Vector3(randomX, this.transform.position.y, 1f);
-                Instantiate(cristalSprite, whereToSpawn, Quaternion.identity);
-            }
+            int spawnCristalAmount = 0;
+            if (rndCristalAmount >= 15) spawnCristalAmount = 15;
 
-            cristal.AddCristals((int)Mathf.Round(rndCristalCount));
-            changedCristalText?.Invoke((int)Mathf.Round(rndCristalCount));
+            SpawnCountItemOfMoney(spawnCristalAmount, cristalSprite);
+
+            cristal.AddCristals(rndCristalAmount);
+
+            changedCristalText?.Invoke(rndCristalAmount);
+        }
+    }
+
+    private int GetRandomAmountMoney(int minValue, int maxValue) => UnityEngine.Random.Range(minValue, maxValue);
+
+    private int MultiplyAmountMoney(int rndAmount, float multiplier)
+    {
+        if (rndAmount != 0 && multiplier != 0)
+            return (int)Mathf.Round(rndAmount * multiplier);
+
+        return rndAmount;
+    }
+
+    private Vector3 SetRandomPosition()
+    {
+        float randomX = UnityEngine.Random.Range(xPositionSpawn.x, xPositionSpawn.y);
+        float randomY = UnityEngine.Random.Range(yPositionSpawn.x, yPositionSpawn.y);
+        Vector3 whereToSpawn = new Vector3(randomX, randomY, 2f);
+        return whereToSpawn;
+    }
+
+    private void SpawnCountItemOfMoney(int count, GameObject prefab)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(prefab, SetRandomPosition(), Quaternion.identity);
         }
     }
 }

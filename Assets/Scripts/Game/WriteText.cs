@@ -2,10 +2,10 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class ChoiseCharacter : MonoBehaviour
+public class WriteText : MonoBehaviour
 {
     [SerializeField] private TMP_Text someText;
-    [SerializeField] private float tomeToCleare;
+    [SerializeField] private float timeToCleare;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class ChoiseCharacter : MonoBehaviour
 
     private IEnumerator CleareText()
     {
-        yield return new WaitForSeconds(tomeToCleare);
+        yield return new WaitForSeconds(timeToCleare);
         someText.text = "";
     }
 }

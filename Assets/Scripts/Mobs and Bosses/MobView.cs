@@ -40,7 +40,7 @@ public class MobView : MonoBehaviour
         if(mob != null)
         {
             mobHealthBar.value = mob.GetComponent<Mob>().GetHealth();
-            healthPointText.text = mob.GetComponent<Mob>().GetHealth().ToString();
+            healthPointText.text = string.Format("{0}/{1}", mob.GetComponent<Mob>().GetHealth().ToString(), mob.GetComponent<Mob>().GetMaxHealth());
         }
     }
 }

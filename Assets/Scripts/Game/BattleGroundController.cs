@@ -1,31 +1,45 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BattleGroundController : MonoBehaviour
 {
     [SerializeField] private Character characterPrefab;
     [SerializeField] private BattleGroundView view;
 
+    [SerializeField] private float cleareTime;
+
     [SerializeField] private GameObject[] characterPositions = new GameObject[4];
 
+    [SerializeField] private Character instanseCharacter;
     private GameObject mob;
 
-    public void ChouiseCharacter(CharacterModel model) => characterPrefab.SetCharacterModel(model);
-
-    public void CoisePosition(int index)
+    public void ChouiseCharacter(CharacterModel model)
     {
-        if (characterPositions[index] != null && CheckDoubleCharacters())
+        instanseCharacter = characterPrefab;
+        instanseCharacter.SetCharacterModel(model);
+        view.SetActiveNumberImages(true);
+        StartCoroutine(CleareChoiseCharacter());
+    }
+
+    public void DescroyCharacter(int positionIndex)
+    {
+        view.SetCharacterImage(null, positionIndex, false);
+        Destroy(characterPositions[positionIndex].gameObject);
+        characterPositions[positionIndex] = null;
+    }
+
+    public void CoisePosition(int positionIndex)
+    {
+        if (characterPositions[positionIndex] != null)
         {
-            Destroy(characterPositions[index].gameObject);
-            view.SetCharacterImage(characterPrefab.GetCharacterSprite(), index);
-            characterPositions[index] = Instantiate(characterPrefab.gameObject, this.transform, true);
-            characterPositions[index].GetComponent<Character>().SetMob(mob);
+            CheckCopyCharacters(positionIndex);
+            DescroyCharacter(positionIndex);
+            SpawnCharacter(positionIndex);
         }
-        else if (characterPositions[index] == null && CheckDoubleCharacters())
+        else if (characterPositions[positionIndex] == null) 
         {
-            view.SetCharacterImage(characterPrefab.GetCharacterSprite(), index);
-            characterPositions[index] = Instantiate(characterPrefab.gameObject, this.transform, true);
-            characterPositions[index].GetComponent<Character>().SetMob(mob);
+            CheckCopyCharacters(positionIndex);
+            SpawnCharacter(positionIndex);
         }
     }
 
@@ -44,16 +58,31 @@ public class BattleGroundController : MonoBehaviour
         this.mob = mob;
     }
 
-    private bool CheckDoubleCharacters()
+    private void SpawnCharacter(int positionIndex)
     {
-        foreach(GameObject character in characterPositions)
+        view.SetCharacterImage(instanseCharacter.GetCharacterSprite(), positionIndex, true);
+
+        characterPositions[positionIndex] = Instantiate(instanseCharacter.gameObject, this.transform, true);
+
+        characterPositions[positionIndex].GetComponent<Character>().SetMob(mob);
+        characterPositions[positionIndex].GetComponent<Character>().SetPositionIndex(positionIndex);
+    }
+
+    private void CheckCopyCharacters(int positionIndex)
+    {
+        foreach (GameObject character in characterPositions)
         {
             if (character == null) continue;
-            else if (character.GetComponent<Character>().GetCharacterIndex() == characterPrefab.GetCharacterIndex())
+            else if (character.GetComponent<Character>().GetCharacterIndex() == instanseCharacter.GetCharacterIndex())
             {
-                return false;
+                DescroyCharacter(character.GetComponent<Character>().GetPositionIndex());
             }
         }
-        return true;
+    }
+
+    private IEnumerator CleareChoiseCharacter()
+    {
+        yield return new WaitForSeconds(cleareTime);
+        instanseCharacter = null;
     }
 }

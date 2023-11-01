@@ -6,8 +6,9 @@ public class Character : MonoBehaviour
     [SerializeField] private CharacterModel model;
     [SerializeField] private float damage;
     [SerializeField] private float damageRate;
+    [SerializeField] private int positionIndex;
 
-    [SerializeField] private IDamageble mob;
+    private Mob mob;
 
     public int GetCharacterIndex() => model.GetCharacterIndex();
     public Sprite GetCharacterSprite() => model.GetCharacterSprite();
@@ -15,8 +16,16 @@ public class Character : MonoBehaviour
     public string GetCharacterPowerType() => model.GetChracterPowerType(); 
     public float GetCurrentDamage() => damage;
     public float GetCurrentDamageRate() => damageRate;
+    public int GetPositionIndex() => positionIndex;
 
     public void SetCharacterModel(CharacterModel model) => this.model = model; 
+    public void SetPositionIndex(int posititonIndex) => this.positionIndex = posititonIndex;
+
+    public void SetMob(GameObject mob)
+    {
+        if (mob.TryGetComponent<Mob>(out this.mob))
+            this.mob = mob.GetComponent<Mob>();
+    }
 
     private void OnEnable()
     {
@@ -26,13 +35,7 @@ public class Character : MonoBehaviour
     private void OnDisable()
     {
         SpawnerMobsController.instantiatedMob -= SetMob;
-    }
-
-    public void SetMob(GameObject mob)
-    {
-        if (mob.TryGetComponent<IDamageble>(out this.mob))
-            this.mob = mob.GetComponent<IDamageble>();
-    }
+    }   
 
     private void Start()
     {
