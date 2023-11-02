@@ -39,6 +39,23 @@ public class LoadingController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void ActivateLoadingPanel()
+    {
+        gameObject.SetActive(true);
+        adviceView.SetAdviceText();
+        StartCoroutine(TestloadingPanel());
+    }
+
+    private IEnumerator TestloadingPanel()
+    {
+        loadingAnimator.SetTrigger("SceneStart");
+        yield return new WaitForSeconds(1.5f);
+        loadingAnimator.SetBool("SceneStart", false);
+        gameObject.SetActive(true);
+        yield return new WaitForSeconds(waitingTime*2);
+        loadingAnimator.SetTrigger("SceneEnd");
+    }
+
     private void LoadGameScene()
     {        
         loadingSceneOperation = SceneManager.LoadSceneAsync("Game");

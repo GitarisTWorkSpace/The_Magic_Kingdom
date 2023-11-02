@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public static Action<int> characterAtacked;
+
     [SerializeField] private CharacterModel model;
     [SerializeField] private float damage;
     [SerializeField] private float damageRate;
@@ -46,9 +49,11 @@ public class Character : MonoBehaviour
 
     private IEnumerator DamageMob()
     {
+        yield return new WaitForSeconds(damageRate);
         while (true)
         {
             mob.TakeDemage(damage);
+            characterAtacked?.Invoke(positionIndex);
             yield return new WaitForSeconds(damageRate);
         }
     }
