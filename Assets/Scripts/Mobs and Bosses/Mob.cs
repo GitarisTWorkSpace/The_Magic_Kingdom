@@ -12,6 +12,11 @@ public class Mob : MonoBehaviour, IDamageble
     public Sprite GetSprite() => mobModel.GetSprite();
     public float GetHealth() => health;
     public float GetMaxHealth() => mobModel.GetHealth();
+    public float GetCristalChanceDrop() => mobModel.GetCristalChanceDrop();
+    public int GetMaxCoinAmount() => (int)Mathf.Round(mobModel.GetMaxCoinValue() * mobModel.GetMultiplyCoinValue());
+    public int GetMaxCristalAmount() => (int)Mathf.Round(mobModel.GetMaxCristalValue() * mobModel.GetMultiplyCristalValue());
+    public string GetMobType() => mobModel.GetMobType();
+    public string GetMobPowerType() => mobModel.GetMobPowerType();
 
     public void TakeDemage(float damage)
     {

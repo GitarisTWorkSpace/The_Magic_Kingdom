@@ -5,11 +5,16 @@ using UnityEngine.UI;
 public class MobView : MonoBehaviour
 {
     [SerializeField] private Image mobSprite;
+    [SerializeField] private Image bossSprite;
     [SerializeField] private Slider mobHealthBar;
     [SerializeField] private Animation animationShaking;
-    [SerializeField] private TMP_Text healthPointText;
 
-    private GameObject mob;
+    [SerializeField] private TMP_Text healthPointText;
+    [SerializeField] private TMP_Text dropCristalChanceText;
+    [SerializeField] private TMP_Text maxCoinDropText;
+    [SerializeField] private TMP_Text maxCristalDropText;
+
+    private Mob mob;
 
     private void OnEnable()
     {
@@ -25,9 +30,25 @@ public class MobView : MonoBehaviour
 
     public void SetMobInfo(GameObject mob)
     {
-        this.mob = mob;
-        mobHealthBar.maxValue = this.mob.GetComponent<Mob>().GetMaxHealth();
-        mobSprite.sprite = this.mob.GetComponent<Mob>().GetSprite();
+        this.mob = mob.GetComponent<Mob>();
+        mobHealthBar.maxValue = this.mob.GetMaxHealth();
+        if (this.mob.GetMobType() == "Boss")
+        {
+            mobSprite.gameObject.SetActive(false);
+            bossSprite.gameObject.SetActive(true);
+            
+            bossSprite.sprite = this.mob.GetSprite();
+            bossSprite.transform.position.Set(0, -150, 0);
+        }
+        else
+        {
+            bossSprite.gameObject.SetActive(false);
+            mobSprite.gameObject.SetActive(true);
+            mobSprite.sprite = this.mob.GetSprite();
+        }
+        dropCristalChanceText.text = this.mob.GetCristalChanceDrop().ToString() + "%";
+        maxCoinDropText.text = this.mob.GetMaxCoinAmount().ToString();
+        maxCristalDropText.text = this.mob.GetMaxCristalAmount().ToString();
     }
 
     public void ShakeMob()
@@ -39,8 +60,8 @@ public class MobView : MonoBehaviour
     {
         if(mob != null)
         {
-            mobHealthBar.value = mob.GetComponent<Mob>().GetHealth();
-            healthPointText.text = string.Format("{0}/{1}", mob.GetComponent<Mob>().GetHealth().ToString(), mob.GetComponent<Mob>().GetMaxHealth());
+            mobHealthBar.value = mob.GetHealth();
+            healthPointText.text = string.Format("{0}/{1}", mob.GetHealth().ToString(), mob.GetMaxHealth());
         }
     }
 }
