@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
-  m_Name: Walter Grace
+  m_Name: The Whooper of the Abyss Wok
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: 6e1136bfc18c49441a090af9af68c0f2, type: 3}
-  characterIndex: 2
+  characterSprite: {fileID: 21300000, guid: 8bdb9f20d69965248bb9e468cb96af3a, type: 3}
+  characterIndex: 5
   type:
-  - Monster
+  - Spirit
   powerType:
   - Dark
-  damage: 20
-  damageRate: 8
+  damage: 15
+  damageRate: 6
   abilities:
-  - {fileID: 11400000, guid: 461a59d8f341a0941bde68e7a3e09e22, type: 2}
-  - {fileID: 11400000, guid: 3481a1140bbaf2f4faf582a5ae493200, type: 2}
-  - {fileID: 11400000, guid: 7ee5c83719c5a234ca54fc342c3dc450, type: 2}
+  - {fileID: 11400000, guid: b00cb33fccc0d244db2f3b620e1dcd63, type: 2}
+  - {fileID: 11400000, guid: 7b4661a3ea8fab345ae1ebceb9f86e03, type: 2}
+  - {fileID: 11400000, guid: a486bc180ff6587409bbce64eab14d11, type: 2}

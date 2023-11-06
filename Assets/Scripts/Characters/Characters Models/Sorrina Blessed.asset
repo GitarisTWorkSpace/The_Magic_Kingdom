@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
   m_Name: Sorrina Blessed
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: 4776b0ebc4faa36488f3788d8b182b48, type: 3}
-  characterIndex: 3
-  type: Spirit
-  powerType: Light
+  characterSprite: {fileID: 21300000, guid: 7f177d3d8fb037a4f9fbfc7efd1bd1eb, type: 3}
+  characterIndex: 6
+  type:
+  - Human
+  - Spirit
+  powerType:
+  - Light
   damage: 1
   damageRate: 0.5
+  abilities:
+  - {fileID: 11400000, guid: f1c625ae2d79cb1499b6d6ac7e1558dd, type: 2}
+  - {fileID: 11400000, guid: c9b43fb99181a6d4cb5c66fe727307cd, type: 2}
+  - {fileID: 11400000, guid: a909ac97351108e4da803d5a63604eed, type: 2}

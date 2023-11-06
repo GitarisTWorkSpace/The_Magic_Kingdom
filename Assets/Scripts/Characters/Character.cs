@@ -15,8 +15,8 @@ public class Character : MonoBehaviour
 
     public int GetCharacterIndex() => model.GetCharacterIndex();
     public Sprite GetCharacterSprite() => model.GetCharacterSprite();
-    public string GetCharacterType() => model.GetCharacterType();
-    public string GetCharacterPowerType() => model.GetChracterPowerType(); 
+    public string[] GetCharacterType() => model.GetCharacterAllType();
+    public string[] GetCharacterPowerType() => model.GetChracterAllPowerType(); 
     public float GetCurrentDamage() => damage;
     public float GetCurrentDamageRate() => damageRate;
     public int GetPositionIndex() => positionIndex;
