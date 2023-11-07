@@ -49,7 +49,11 @@ public class MobView : MonoBehaviour
         if (this.mob.GetMobAllType()[0] != EntityType.Boss)
             animationShaking.Play();
 
-        if (damage >= 5 && damage < 15)
+        if (damage < 5)
+        {
+            bossAnimationShaking.Stop();
+        }
+        else if (damage >= 5 && damage < 15)
         {
             bossAnimationShaking.clip = bossGetDamage[0];
         }
@@ -61,12 +65,8 @@ public class MobView : MonoBehaviour
         {
             bossAnimationShaking.clip = bossGetDamage[2];
         }
-        else
-        {
-            bossAnimationShaking.clip = null;
-        }
 
-        if (this.mob.GetMobAllType()[0] == EntityType.Boss && bossAnimationShaking.clip != null)
+        if (this.mob.GetMobAllType()[0] == EntityType.Boss)
             bossAnimationShaking.Play();
     }
 
