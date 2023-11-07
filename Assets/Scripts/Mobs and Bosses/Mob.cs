@@ -15,8 +15,8 @@ public class Mob : MonoBehaviour, IDamageble
     public float GetCristalChanceDrop() => mobModel.GetCristalChanceDrop();
     public int GetMaxCoinAmount() => (int)Mathf.Round(mobModel.GetMaxCoinValue() * mobModel.GetMultiplyCoinValue());
     public int GetMaxCristalAmount() => (int)Mathf.Round(mobModel.GetMaxCristalValue() * mobModel.GetMultiplyCristalValue());
-    public string GetMobType() => mobModel.GetMobType();
-    public string GetMobPowerType() => mobModel.GetMobPowerType();
+    public EntityType[] GetMobAllType() => mobModel.GetMobAllType();
+    public EntityPowerType[] GetMobAllPowerType() => mobModel.GetMobAllPowerType();
 
     public void TakeDemage(float damage)
     {

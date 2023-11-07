@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 6125701314878083800}
   - component: {fileID: 7644816926808592044}
   - component: {fileID: 7815990973010755685}
+  - component: {fileID: 8476428666236299255}
   m_Layer: 5
   m_Name: Walter Grace Button
   m_TagString: Untagged
@@ -625,15 +626,30 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChoiseCharacter, Assembly-CSharp
-        m_MethodName: WriteSomeText
-        m_Mode: 5
+        m_TargetAssemblyTypeName: BattleGroundController, Assembly-CSharp
+        m_MethodName: ChouiseCharacter
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 980bd6f0b2eca334384334289ebd27a9, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CharacterModel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u0412\u0435\u043B\u0438\u043A\u043E\u0440\u0443\u0441\u0441\u0440\u0438\u0439
-            \u0437\u0430\u0445\u0432\u0430\u0442 \u0442\u0435\u043D\u0442\u0430\u043A\u043B\u044F\u043C\u0438"
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8476428666236299255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8561070284160997778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e561b6f8a6805ae4587f4992b8400058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterModel: {fileID: 11400000, guid: 980bd6f0b2eca334384334289ebd27a9, type: 2}
+  characterImage: {fileID: 1525363794665072769}
+  characterName: {fileID: 3502420191398134129}
+  characterLvl: {fileID: 6684642128618894594}

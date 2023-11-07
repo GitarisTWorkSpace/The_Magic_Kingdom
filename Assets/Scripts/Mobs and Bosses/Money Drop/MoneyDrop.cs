@@ -41,10 +41,8 @@ public class MoneyDrop : MonoBehaviour
             int rndCristalAmount = GetRandomAmountMoney(minCristalValue, maxCristalValue);
             rndCristalAmount = MultiplyAmountMoney(rndCristalAmount, multiplyCristalValue);
 
-            int spawnCristalAmount = 0;
-            spawnCristalAmount = rndCristalAmount;
+            int spawnCristalAmount = rndCristalAmount;
             if (spawnCristalAmount >= 15) spawnCristalAmount = 15;
-
 
             SpawnCountItemOfMoney(spawnCristalAmount, cristalSprite);
 

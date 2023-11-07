@@ -140,6 +140,7 @@ public class BattleGroundController : MonoBehaviour
     private void SaveCharacterInPositon(int positionIndex)
     {
         PlayerPrefs.SetInt("CharacterPosition" + positionIndex.ToString(), instanseCharacter.GetCharacterIndex());
+        Debug.Log("CharacterPosition" + positionIndex.ToString() + " \n"+ instanseCharacter.GetCharacterIndex());
     }
 
     private void LoadCharacterInPositon()
@@ -150,6 +151,7 @@ public class BattleGroundController : MonoBehaviour
             {
                 ChouiseCharacter(characterModels[PlayerPrefs.GetInt("CharacterPosition" + i)]);
                 CoisePosition(i);
+                Debug.Log("CharacterPosition" + i + " \n" + characterModels[PlayerPrefs.GetInt("CharacterPosition" + i)]);
             }
         }
     }

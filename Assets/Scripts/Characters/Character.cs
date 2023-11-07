@@ -7,22 +7,30 @@ public class Character : MonoBehaviour
     public static Action<int> characterAtacked;
 
     [SerializeField] private CharacterModel model;
-    [SerializeField] private float damage;
-    [SerializeField] private float damageRate;
+
+    [SerializeField] private float currentDamage;
+    [SerializeField] private float currentDamageRate;
+
     [SerializeField] private int positionIndex;
 
     private Mob mob;
 
-    public int GetCharacterIndex() => model.GetCharacterIndex();
     public Sprite GetCharacterSprite() => model.GetCharacterSprite();
-    public string[] GetCharacterType() => model.GetCharacterAllType();
-    public string[] GetCharacterPowerType() => model.GetChracterAllPowerType(); 
-    public float GetCurrentDamage() => damage;
-    public float GetCurrentDamageRate() => damageRate;
+    public int GetCharacterIndex() => model.GetCharacterIndex();
+    public EntityType[] GetCharacterType() => model.GetCharacterAllType();
+    public EntityPowerType[] GetCharacterPowerType() => model.GetChracterAllPowerType();
+    public float GetCurrentDamage() => currentDamage;
+    public float GetCurrentDamageRate() => currentDamageRate;
     public int GetPositionIndex() => positionIndex;
 
     public void SetCharacterModel(CharacterModel model) => this.model = model; 
     public void SetPositionIndex(int posititonIndex) => this.positionIndex = posititonIndex;
+
+    public void AddlevelPoint(int value)
+    {
+        model.AddCurrentLevelPoint(value);
+        PlayerPrefs.SetInt(model.GetCharacterIndex().ToString() + "LVLPoints", model.GetCurrentLevelPoint());
+    }
 
     public void SetMob(GameObject mob)
     {
@@ -42,19 +50,21 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        damage = model.GetDamage();
-        damageRate = model.GetDamageRate();
+        currentDamage = model.GetDamage();
+        if (model.GetCharacterLevel() >= 10)
+            currentDamage = model.GetDamage() * (model.GetCharacterLevel() / 10);
+        currentDamageRate = model.GetDamageRate();
         StartCoroutine(DamageMob());
     }
 
     private IEnumerator DamageMob()
     {
-        yield return new WaitForSeconds(damageRate);
+        yield return new WaitForSeconds(currentDamageRate);
         while (true)
         {
-            mob.TakeDemage(damage);
+            mob.TakeDemage(currentDamage);
             characterAtacked?.Invoke(positionIndex);
-            yield return new WaitForSeconds(damageRate);
+            yield return new WaitForSeconds(currentDamageRate);
         }
     }
 }

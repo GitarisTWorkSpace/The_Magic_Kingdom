@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 21300000, guid: a2d1237ede3d78f4f86ac9d03b8e3a64, type: 3}
   characterIndex: 1
-  type:
-  - Human
-  powerType:
-  - Natural
-  - Light
+  characterName: "\u0414\u0436\u0438\u043B\u043B - \u0425\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0438\u0446\u0430
+    \u043B\u0435\u0441\u0430"
+  characterLevel: 1
+  needCharacterLevelPointValueToUpgtade: 125
+  currentCharacterLevelPointValueToUgrade: 0
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 01000000
+  powerType: 0100000005000000
   damage: 15
   damageRate: 4
   abilities:

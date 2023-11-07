@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 21300000, guid: 8bdb9f20d69965248bb9e468cb96af3a, type: 3}
   characterIndex: 5
-  type:
-  - Spirit
-  powerType:
-  - Dark
+  characterName: "\u041A\u043B\u0438\u043A\u0443\u043D \u0411\u0435\u0437\u0434\u043D\u044B
+    - \u0412\u043E\u043A"
+  characterLevel: 1
+  needCharacterLevelPointValueToUpgtade: 125
+  currentCharacterLevelPointValueToUgrade: 0
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 03000000
+  powerType: 04000000
   damage: 15
   damageRate: 6
   abilities:

@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 21300000, guid: 9f606e4f5eec34141a57a2608aa2f016, type: 3}
   characterIndex: 7
-  type:
-  - Spirit
-  powerType:
-  - Fire
+  characterName: "\u0420\u0430\u0433\u043E\u043D - \u0420\u043E\u0441"
+  characterLevel: 1
+  needCharacterLevelPointValueToUpgtade: 175
+  currentCharacterLevelPointValueToUgrade: 0
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 03000000
+  powerType: 03000000
   damage: 25
   damageRate: 10
   abilities:
