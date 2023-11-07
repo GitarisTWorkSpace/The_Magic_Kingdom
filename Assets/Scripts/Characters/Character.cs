@@ -17,8 +17,8 @@ public class Character : MonoBehaviour
 
     public Sprite GetCharacterSprite() => model.GetCharacterSprite();
     public int GetCharacterIndex() => model.GetCharacterIndex();
-    public EntityType[] GetCharacterType() => model.GetCharacterAllType();
-    public EntityPowerType[] GetCharacterPowerType() => model.GetChracterAllPowerType();
+    public EntityType[] GetCharacterAllType() => model.GetCharacterAllType();
+    public EntityPowerType[] GetChracterAllPowerType() => model.GetChracterAllPowerType();
     public float GetCurrentDamage() => currentDamage;
     public float GetCurrentDamageRate() => currentDamageRate;
     public int GetPositionIndex() => positionIndex;
@@ -63,6 +63,7 @@ public class Character : MonoBehaviour
         while (true)
         {
             mob.TakeDemage(currentDamage);
+            //model.UseAbilties();
             characterAtacked?.Invoke(positionIndex);
             yield return new WaitForSeconds(currentDamageRate);
         }

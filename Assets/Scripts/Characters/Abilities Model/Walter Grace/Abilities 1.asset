@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ee210f1b429d14b8559cf5ae65ddd7, type: 3}
   m_Name: Abilities 1
   m_EditorClassIdentifier: 
-  abilitiDescription: "+ 10% \u0443\u0440\u043E\u043D\u0430 <bold>\u0418\u0433\u0440\u043E\u043A\u0443<bold>"
+  abilitiDescription: "+ 10% \u0443\u0440\u043E\u043D\u0430 <b>\u0418\u0433\u0440\u043E\u043A\u0443</b>"

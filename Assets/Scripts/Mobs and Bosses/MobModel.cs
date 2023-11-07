@@ -20,6 +20,9 @@ public class MobModel : ScriptableObject
     [SerializeField] private int maxCoinValue;
     [SerializeField] private float multiplyCoinValue;
 
+    [Header("Level points")]
+    [SerializeField] private float levelPoints;
+
     public float GetHealth() => health;
     public EntityType[] GetMobAllType() => type;
     public EntityPowerType[] GetMobAllPowerType() => powerType;

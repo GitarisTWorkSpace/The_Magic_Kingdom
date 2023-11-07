@@ -14,7 +14,7 @@ public class SpawnerMobsController : MonoBehaviour
 
     [SerializeField] private TMP_Text mobCountText;
 
-    private Mob mob;
+    [SerializeField] private Mob mob;
 
     public static Action<GameObject> instantiatedMob;
 
@@ -23,6 +23,8 @@ public class SpawnerMobsController : MonoBehaviour
         mobCount = 0;
         SaveMobCount();
     }
+
+    public GameObject GetCurrenMob() => mob.gameObject;
 
     private void Start()
     {

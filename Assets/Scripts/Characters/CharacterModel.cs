@@ -47,6 +47,15 @@ public class CharacterModel : ScriptableObject
 
     public void AddCurrentLevelPoint(int value) => currentCharacterLevelPointValueToUgrade += value;
 
+    public void UseAbilties()
+    {
+        foreach(var abiliti in abilities)
+        {
+            Debug.Log(characterName);
+            abiliti.Abiliti();
+        }
+    }
+
     public void UpgareCharacter()
     {
         currentCharacterLevelPointValueToUgrade = 0;

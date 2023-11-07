@@ -8,11 +8,8 @@ public class MobView : MonoBehaviour
     [SerializeField] private Image bossSprite;
     [SerializeField] private Slider mobHealthBar;
     [SerializeField] private Animation animationShaking;
-
-    [SerializeField] private TMP_Text healthPointText;
-    [SerializeField] private TMP_Text dropCristalChanceText;
-    [SerializeField] private TMP_Text maxCoinDropText;
-    [SerializeField] private TMP_Text maxCristalDropText;
+    [SerializeField] private Animation bossAnimationShaking;
+    [SerializeField] private AnimationClip[] bossGetDamage;
 
     private Mob mob;
 
@@ -32,28 +29,45 @@ public class MobView : MonoBehaviour
     {
         this.mob = mob.GetComponent<Mob>();
         mobHealthBar.maxValue = this.mob.GetMaxHealth();
-        if (this.mob.GetMobType() == "Boss")
+
+        bossSprite.gameObject.SetActive(false);
+        mobSprite.gameObject.SetActive(true);
+        mobSprite.sprite = this.mob.GetSprite();
+
+        if (this.mob.GetMobAllType()[0] == EntityType.Boss)
         {
             mobSprite.gameObject.SetActive(false);
             bossSprite.gameObject.SetActive(true);
-            
+
             bossSprite.sprite = this.mob.GetSprite();
             bossSprite.transform.position.Set(0, -150, 0);
+        }            
+    }
+
+    public void ShakeMob(int damage)
+    {
+        if (this.mob.GetMobAllType()[0] != EntityType.Boss)
+            animationShaking.Play();
+
+        if (damage >= 5 && damage < 15)
+        {
+            bossAnimationShaking.clip = bossGetDamage[0];
+        }
+        else if (damage >= 15 && damage < 30)
+        {
+            bossAnimationShaking.clip = bossGetDamage[1];
+        }
+        else if (damage >= 30)
+        {
+            bossAnimationShaking.clip = bossGetDamage[2];
         }
         else
         {
-            bossSprite.gameObject.SetActive(false);
-            mobSprite.gameObject.SetActive(true);
-            mobSprite.sprite = this.mob.GetSprite();
+            bossAnimationShaking.clip = null;
         }
-        dropCristalChanceText.text = this.mob.GetCristalChanceDrop().ToString() + "%";
-        maxCoinDropText.text = this.mob.GetMaxCoinAmount().ToString();
-        maxCristalDropText.text = this.mob.GetMaxCristalAmount().ToString();
-    }
 
-    public void ShakeMob()
-    {
-        animationShaking.Play();
+        if (this.mob.GetMobAllType()[0] == EntityType.Boss && bossAnimationShaking.clip != null)
+            bossAnimationShaking.Play();
     }
 
     private void Update()
@@ -61,7 +75,6 @@ public class MobView : MonoBehaviour
         if(mob != null)
         {
             mobHealthBar.value = mob.GetHealth();
-            healthPointText.text = string.Format("{0}/{1}", mob.GetHealth().ToString(), mob.GetMaxHealth());
         }
     }
 }

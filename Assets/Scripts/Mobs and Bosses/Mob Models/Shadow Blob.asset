@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 6652381e6d373fe4d9f10a2596574662, type: 3}
   health: 115
+  type: 02000000
+  powerType: 04000000
   cristalChanceDrop: 0.9
   minCristalValue: 1
   maxCristalValue: 2
@@ -21,3 +23,4 @@ MonoBehaviour:
   minCoinValue: 120
   maxCoinValue: 1200
   multiplyCoinValue: 1
+  levelPoints: 0

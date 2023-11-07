@@ -17,7 +17,7 @@ MonoBehaviour:
   characterName: "\u0423\u043E\u043B\u0442\u0435\u0440 \u0413\u0440\u0435\u0439\u0441"
   characterLevel: 1
   needCharacterLevelPointValueToUpgtade: 150
-  currentCharacterLevelPointValueToUgrade: 150
+  currentCharacterLevelPointValueToUgrade: 0
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 02000000
   powerType: 04000000

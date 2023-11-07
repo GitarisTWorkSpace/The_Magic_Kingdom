@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class BattleGroundController : MonoBehaviour
 {
+    public static Action characterCoisePositon;
+
     [SerializeField] private CristalModel cristalModel;
     [SerializeField] private CristalController cristalController;
 
@@ -18,6 +21,12 @@ public class BattleGroundController : MonoBehaviour
 
     [SerializeField] private Character instanseCharacter;
     private GameObject mob;
+
+    public GameObject GetCharactersOnPlayGround(int index)
+    {
+        if (characterPositions.Length <= 0) return null;
+        return characterPositions[index];
+    }
 
     public void ChouiseCharacter(CharacterModel model)
     {
@@ -39,15 +48,16 @@ public class BattleGroundController : MonoBehaviour
         if (!isBuyPostion[positionIndex]) return;
         if (characterPositions[positionIndex] != null)
         {
-            CheckCopyCharacters(positionIndex);
+            CheckCopyCharacters();
             DescroyCharacter(positionIndex);
             SpawnCharacter(positionIndex);
         }
         else if (characterPositions[positionIndex] == null) 
         {
-            CheckCopyCharacters(positionIndex);
+            CheckCopyCharacters();
             SpawnCharacter(positionIndex);
         }
+        characterCoisePositon?.Invoke();
     }
 
     public void BuyPosition(int positionIndex)
@@ -102,7 +112,7 @@ public class BattleGroundController : MonoBehaviour
         SaveCharacterInPositon(positionIndex);
     }
 
-    private void CheckCopyCharacters(int positionIndex)
+    private void CheckCopyCharacters()
     {
         foreach (GameObject character in characterPositions)
         {
@@ -140,7 +150,6 @@ public class BattleGroundController : MonoBehaviour
     private void SaveCharacterInPositon(int positionIndex)
     {
         PlayerPrefs.SetInt("CharacterPosition" + positionIndex.ToString(), instanseCharacter.GetCharacterIndex());
-        Debug.Log("CharacterPosition" + positionIndex.ToString() + " \n"+ instanseCharacter.GetCharacterIndex());
     }
 
     private void LoadCharacterInPositon()
@@ -151,7 +160,6 @@ public class BattleGroundController : MonoBehaviour
             {
                 ChouiseCharacter(characterModels[PlayerPrefs.GetInt("CharacterPosition" + i)]);
                 CoisePosition(i);
-                Debug.Log("CharacterPosition" + i + " \n" + characterModels[PlayerPrefs.GetInt("CharacterPosition" + i)]);
             }
         }
     }
