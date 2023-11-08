@@ -8,6 +8,7 @@ public class Mob : MonoBehaviour, IDamageble
     [SerializeField] private float health;
 
     public static Action<int> takedDamage;
+    public static Action mobDead;
 
     public Sprite GetSprite() => mobModel.GetSprite();
     public float GetHealth() => health;
@@ -37,6 +38,7 @@ public class Mob : MonoBehaviour, IDamageble
         {
             drop.DropCoin(mobModel.GetMinCoinValue(), mobModel.GetMaxCoinValue(), mobModel.GetMultiplyCoinValue());
             drop.DropCristal(mobModel.GetCristalChanceDrop(), mobModel.GetMinCristalValue(), mobModel.GetMaxCristalValue(), mobModel.GetMultiplyCristalValue());
+            mobDead?.Invoke();
             Destroy(gameObject); 
         }
     }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc64e76c787b4b4b817bf3501a7f419, type: 3}
+  m_Name: Mice
+  m_EditorClassIdentifier: 
+  mobSprite: {fileID: 21300000, guid: 00fdc067e6e373645867f545cba415f6, type: 3}
+  health: 16
+  type: 00000000
+  powerType: 00000000
+  cristalChanceDrop: 0.2
+  minCristalValue: 0
+  maxCristalValue: 1
+  multiplyCristalValue: 0.2
+  minCoinValue: 15
+  maxCoinValue: 60
+  multiplyCoinValue: 0.4
+  levelPoints: 1

@@ -21,7 +21,7 @@ MonoBehaviour:
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 03000000
   powerType: 03000000
-  damage: 25
+  damage: 32
   damageRate: 10
   abilities:
   - {fileID: 11400000, guid: 534301c406ea96a43b5cddbc03b3069c, type: 2}

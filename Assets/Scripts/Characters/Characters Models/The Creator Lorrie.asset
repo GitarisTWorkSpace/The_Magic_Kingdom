@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
   m_Name: The Creator Lorrie
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: 8075e22f196ec1f46b901b2d12c2715f, type: 3}
+  characterSprite: {fileID: 21300000, guid: ce170da79809e4a41a219ef924178963, type: 3}
   characterIndex: 4
   characterName: "\u0421\u043E\u0437\u0438\u0434\u0430\u0442\u0435\u043B\u044C\u043D\u0438\u0446\u0430
     - \u041B\u043E\u0440\u0440\u0438"
@@ -22,7 +22,7 @@ MonoBehaviour:
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 01000000
   powerType: 05000000
-  damage: 4
+  damage: 6
   damageRate: 2
   abilities:
   - {fileID: 11400000, guid: 1fb837a055e6f5745af99f01950ddb34, type: 2}

@@ -23,4 +23,4 @@ MonoBehaviour:
   minCoinValue: 69
   maxCoinValue: 696
   multiplyCoinValue: 0.9
-  levelPoints: 0
+  levelPoints: 4

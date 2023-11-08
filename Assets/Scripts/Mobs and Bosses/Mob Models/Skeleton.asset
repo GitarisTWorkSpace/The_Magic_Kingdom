@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: d453c286422811a4a9c81b81b5d4ee6e, type: 3}
-  health: 50
+  health: 55
   type: 02000000
   powerType: 04000000
   cristalChanceDrop: 5
@@ -23,4 +23,4 @@ MonoBehaviour:
   minCoinValue: 15
   maxCoinValue: 1000
   multiplyCoinValue: 1
-  levelPoints: 0
+  levelPoints: 9

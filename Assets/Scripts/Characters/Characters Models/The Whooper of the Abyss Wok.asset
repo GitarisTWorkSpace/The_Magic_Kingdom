@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
   m_Name: The Whooper of the Abyss Wok
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: 8bdb9f20d69965248bb9e468cb96af3a, type: 3}
+  characterSprite: {fileID: 21300000, guid: 94e98b250800e2d44b111660ac7bdd98, type: 3}
   characterIndex: 5
   characterName: "\u041A\u043B\u0438\u043A\u0443\u043D \u0411\u0435\u0437\u0434\u043D\u044B
     - \u0412\u043E\u043A"
@@ -22,8 +22,8 @@ MonoBehaviour:
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 03000000
   powerType: 04000000
-  damage: 15
-  damageRate: 6
+  damage: 38
+  damageRate: 12
   abilities:
   - {fileID: 11400000, guid: b00cb33fccc0d244db2f3b620e1dcd63, type: 2}
   - {fileID: 11400000, guid: 7b4661a3ea8fab345ae1ebceb9f86e03, type: 2}

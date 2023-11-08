@@ -4923,9 +4923,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f1c91d0f203f0a448a0cbea6b5fffb6d, type: 2}
   - {fileID: 11400000, guid: fcbb4723a2c79a044a11120e27972cb0, type: 2}
   - {fileID: 11400000, guid: 68de4330f747afc43a011ad021526352, type: 2}
-  - {fileID: 11400000, guid: 65423ca80438de94ba5f57d9159aa58c, type: 2}
   - {fileID: 11400000, guid: f164396bd36faf84b90294d7a5f110d3, type: 2}
   - {fileID: 11400000, guid: 2c845c467f193464ab18775eb2a674c1, type: 2}
+  - {fileID: 11400000, guid: 6445b88538d63ab45ae3fb4f2d5e1ef1, type: 2}
+  - {fileID: 11400000, guid: 65423ca80438de94ba5f57d9159aa58c, type: 2}
+  - {fileID: 11400000, guid: 49469ed6aa584fa4b991b2a7632dc4c0, type: 2}
+  - {fileID: 11400000, guid: 5ca1fdd0f93aa414d89d0d8f11a2355e, type: 2}
+  - {fileID: 11400000, guid: 699be15583ec790448586aaf2bca39e3, type: 2}
+  - {fileID: 11400000, guid: bb04b609cca74c448b58787846a599e7, type: 2}
+  - {fileID: 11400000, guid: 12fa360b58156b24b821772d00684e71, type: 2}
   bossList:
   - {fileID: 11400000, guid: 6d4485b38911c8742a07d88bd2762a59, type: 2}
   - {fileID: 11400000, guid: 7e2777abb1bc0f64aa65ab2efc4ce5a2, type: 2}
@@ -9081,6 +9087,15 @@ MonoBehaviour:
   spawnerMobsController: {fileID: 426864888}
   cristalCrate: {fileID: 11400000, guid: ee063af9558d31a47937e2d6dc3853da, type: 2}
   coinCrate: {fileID: 11400000, guid: d2958e10946ccb14892ec1b86d99582d, type: 2}
+  charactersModel:
+  - {fileID: 11400000, guid: 6729d658f5df6354ebd8fe7c92c33596, type: 2}
+  - {fileID: 11400000, guid: 2ce75ca977a37d244911d9291ad32424, type: 2}
+  - {fileID: 11400000, guid: 980bd6f0b2eca334384334289ebd27a9, type: 2}
+  - {fileID: 11400000, guid: a7f38777de74b944482bd89b5522bcb7, type: 2}
+  - {fileID: 11400000, guid: f881d8ab8e8ae7842b94ae8490c6967e, type: 2}
+  - {fileID: 11400000, guid: 4db0e3a59f0d23446be01eb15af88a3e, type: 2}
+  - {fileID: 11400000, guid: b0185cd1a3d1fa542bde857aaf5898ed, type: 2}
+  - {fileID: 11400000, guid: e6fa820e14cb68c419289263fe01309e, type: 2}
 --- !u!1 &753576275
 GameObject:
   m_ObjectHideFlags: 0
@@ -25232,6 +25247,38 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1610983337342633971, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 744659805}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyCharacterLevelPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029170555540200716, guid: 1b7fc2818ebf89e42b613022780691d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}

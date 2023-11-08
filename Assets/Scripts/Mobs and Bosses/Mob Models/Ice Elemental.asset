@@ -18,9 +18,9 @@ MonoBehaviour:
   powerType: 02000000
   cristalChanceDrop: 2
   minCristalValue: 1
-  maxCristalValue: 3
+  maxCristalValue: 2
   multiplyCristalValue: 1
   minCoinValue: 15
   maxCoinValue: 1000
   multiplyCoinValue: 1
-  levelPoints: 0
+  levelPoints: 64

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Bleba 5
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: a270001e6caa66d45a858e16929c0c2d, type: 3}
-  health: 75
+  health: 70
   type: 02000000
-  powerType: 01000000
+  powerType: 0100000002000000
   cristalChanceDrop: 2
   minCristalValue: 1
   maxCristalValue: 2
@@ -23,4 +23,4 @@ MonoBehaviour:
   minCoinValue: 15
   maxCoinValue: 1000
   multiplyCoinValue: 0.4
-  levelPoints: 0
+  levelPoints: 3

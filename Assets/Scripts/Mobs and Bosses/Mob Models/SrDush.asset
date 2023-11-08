@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc64e76c787b4b4b817bf3501a7f419, type: 3}
+  m_Name: SrDush
+  m_EditorClassIdentifier: 
+  mobSprite: {fileID: 21300000, guid: 4ccf16be3965d294a981f0a7133be6b2, type: 3}
+  health: 20
+  type: 03000000
+  powerType: 01000000
+  cristalChanceDrop: 0.1
+  minCristalValue: 0
+  maxCristalValue: 1
+  multiplyCristalValue: 0.1
+  minCoinValue: 1
+  maxCoinValue: 100
+  multiplyCoinValue: 0.1
+  levelPoints: 1

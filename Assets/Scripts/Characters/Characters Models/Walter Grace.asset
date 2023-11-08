@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
   m_Name: Walter Grace
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: 6e1136bfc18c49441a090af9af68c0f2, type: 3}
+  characterSprite: {fileID: 21300000, guid: 6cd68a42a285027429b6fcfa001ab1bc, type: 3}
   characterIndex: 2
   characterName: "\u0423\u043E\u043B\u0442\u0435\u0440 \u0413\u0440\u0435\u0439\u0441"
   characterLevel: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 02000000
   powerType: 04000000
-  damage: 20
+  damage: 25
   damageRate: 8
   abilities:
   - {fileID: 11400000, guid: 461a59d8f341a0941bde68e7a3e09e22, type: 2}

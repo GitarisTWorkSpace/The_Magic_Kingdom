@@ -30,21 +30,28 @@ public class Character : MonoBehaviour
     {
         if (mob.TryGetComponent<Mob>(out this.mob))
             this.mob = mob.GetComponent<Mob>();
-        model.AddCurrentLevelPoint(this.mob.GetMobDropCountLevelPoints());
     }
 
     private void OnEnable()
     {
         SpawnerMobsController.instantiatedMob += SetMob;
+        Mob.mobDead += AddLevelPoint;
     }
 
     private void OnDisable()
     {
         SpawnerMobsController.instantiatedMob -= SetMob;
+        Mob.mobDead -= AddLevelPoint;
     }   
+
+    private void AddLevelPoint()
+    {
+        model.AddCurrentLevelPoint(mob.GetMobDropCountLevelPoints());
+    }
 
     private void Start()
     {
+        //model.LoadCharacterInfo();
         currentDamage = model.GetDamage();
         if (model.GetCharacterLevel() >= 10)
             currentDamage = model.GetDamage() * (model.GetCharacterLevel() / 10);
