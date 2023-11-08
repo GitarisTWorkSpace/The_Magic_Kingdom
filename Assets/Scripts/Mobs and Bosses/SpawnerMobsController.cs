@@ -16,6 +16,10 @@ public class SpawnerMobsController : MonoBehaviour
 
     [SerializeField] private Mob mob;
 
+    [SerializeField] private bool spawnNeedMob;
+    [SerializeField] private MobModel neededMob;
+    [SerializeField] private int neededMobCount;
+
     public static Action<GameObject> instantiatedMob;
 
     public void CleareMobCount()
@@ -26,32 +30,36 @@ public class SpawnerMobsController : MonoBehaviour
 
     public GameObject GetCurrenMob() => mob.gameObject;
 
+    public void SetNeededMob(MobModel mob, int count)
+    {
+        neededMob = mob;
+        neededMobCount = mobCount + count;
+        spawnNeedMob = true;
+    }
+
     private void Start()
     {
         LoadMobCount();
-        SpawnMobs();        
-    }
 
-    private void SpawnMobs()
-    {
-        if (CheckMobCount())
+        CheckMobCount();
+        if (!spawnNeedMob)
         {
-            instantiatedMob?.Invoke(mob.gameObject);
-            SaveMobCount();
-            mobCount++;
-            return;
+            MainSpawner();
         }
-        SaveMobCount();
-        mobCount++;
-        mobCountText.text = mobCount.ToString();    
-        int index = UnityEngine.Random.Range(0, mobList.Length);
-        mobPrefab.drop = drop;
-        mobPrefab.mobModel = mobList[index];
-        mob = Instantiate(mobPrefab, this.transform, true);
-        instantiatedMob?.Invoke(mob.gameObject);
+        else if (spawnNeedMob)
+        {
+            SpawnNeededMob();
+        }
     }
 
-    private void SpawnNeededMob(MobModel mobModel)
+    private void MainSpawner()
+    {
+        MobDeadCounter();
+        int index = UnityEngine.Random.Range(0, mobList.Length);
+        SpawnMob(mobList[index]);
+    }
+
+    private void SpawnMob(MobModel mobModel)
     {
         mobPrefab.drop = drop;
         mobPrefab.mobModel = mobModel;
@@ -59,26 +67,52 @@ public class SpawnerMobsController : MonoBehaviour
         instantiatedMob?.Invoke(mob.gameObject);
     }
 
-    private bool CheckMobCount()
+    private void SpawnNeededMob()
+    {
+        if (neededMobCount <= mobCount) spawnNeedMob = false;
+        else
+        {
+            MobDeadCounter();
+            SpawnMob(neededMob);
+        }
+    }
+
+    private void MobDeadCounter()
+    {
+        SaveMobCount();
+        mobCount++;
+        mobCountText.text = mobCount.ToString();
+    }
+
+    private void CheckMobCount()
     {
         if(mobCount == 50) 
         {
-            SpawnNeededMob(bossList[0]);
-            return true;
+            neededMob = bossList[0];
+            neededMobCount = mobCount + 1;
+            spawnNeedMob = true;
         }
         else if (mobCount == 250)
         {
-            SpawnNeededMob(bossList[1]);
-            return true;
+            neededMob = bossList[0];
+            neededMobCount = mobCount + 1;
+            spawnNeedMob = true;
         }
-        return false;
     }
 
     private void Update()
     {
         if (gameObject.transform.childCount == 0)
         {
-            SpawnMobs();
+            CheckMobCount();
+            if (!spawnNeedMob)
+            {
+                MainSpawner();
+            }
+            else if(spawnNeedMob)
+            {
+                SpawnNeededMob();
+            }
         }
     }
 

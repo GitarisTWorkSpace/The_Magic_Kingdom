@@ -26,16 +26,11 @@ public class Character : MonoBehaviour
     public void SetCharacterModel(CharacterModel model) => this.model = model; 
     public void SetPositionIndex(int posititonIndex) => this.positionIndex = posititonIndex;
 
-    public void AddlevelPoint(int value)
-    {
-        model.AddCurrentLevelPoint(value);
-        PlayerPrefs.SetInt(model.GetCharacterIndex().ToString() + "LVLPoints", model.GetCurrentLevelPoint());
-    }
-
     public void SetMob(GameObject mob)
     {
         if (mob.TryGetComponent<Mob>(out this.mob))
             this.mob = mob.GetComponent<Mob>();
+        model.AddCurrentLevelPoint(this.mob.GetMobDropCountLevelPoints());
     }
 
     private void OnEnable()

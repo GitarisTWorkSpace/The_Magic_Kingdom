@@ -45,7 +45,11 @@ public class CharacterModel : ScriptableObject
 
     public string GetAbilitieDescriptionByIndex(int index) => abilities[index].GetAbilitiDescription();
 
-    public void AddCurrentLevelPoint(int value) => currentCharacterLevelPointValueToUgrade += value;
+    public void AddCurrentLevelPoint(int value)
+    {
+        currentCharacterLevelPointValueToUgrade += value;
+        PlayerPrefs.SetInt(characterIndex + "LVLPoints", currentCharacterLevelPointValueToUgrade);
+    }
 
     public void UseAbilties()
     {
@@ -58,7 +62,7 @@ public class CharacterModel : ScriptableObject
 
     public void UpgareCharacter()
     {
-        currentCharacterLevelPointValueToUgrade = 0;
+        currentCharacterLevelPointValueToUgrade -= needCharacterLevelPointValueToUpgtade;
         characterLevel++;
         PlayerPrefs.SetInt(characterIndex.ToString() + "LVL", characterLevel);
         PlayerPrefs.GetInt(characterIndex.ToString() + "LVLPoints", 0);

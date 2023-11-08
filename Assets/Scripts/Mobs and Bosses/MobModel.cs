@@ -21,7 +21,7 @@ public class MobModel : ScriptableObject
     [SerializeField] private float multiplyCoinValue;
 
     [Header("Level points")]
-    [SerializeField] private float levelPoints;
+    [SerializeField] private int levelPoints;
 
     public float GetHealth() => health;
     public EntityType[] GetMobAllType() => type;
@@ -34,5 +34,7 @@ public class MobModel : ScriptableObject
     public int GetMinCoinValue() => minCoinValue;
     public int GetMaxCoinValue() => maxCoinValue;
     public float GetMultiplyCoinValue() => multiplyCoinValue;
+
+    public int GetMobDropCountLevelPoints() => levelPoints;
 
 }
