@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -11,6 +15,14 @@ public class Shop : MonoBehaviour
     [SerializeField] private SpawnerMobsController spawnerMobsController;
     [SerializeField] private MobModel cristalCrate;
     [SerializeField] private MobModel coinCrate;
+
+    [SerializeField] private GameObject AdsPanel;
+    [SerializeField] private float adsTime;
+    [SerializeField] private Button closeAdsButton;
+    [SerializeField] private Image closeAdsButtonImage;
+    [SerializeField] private Sprite[] closeAdsSpriteButton;
+
+    [SerializeField] private AdviceView advice;
 
     [SerializeField] private CharacterModel[] charactersModel;
     public void BuyCoinForCristal(int purchaseAmounMoney)
@@ -35,14 +47,11 @@ public class Shop : MonoBehaviour
 
     public void BuyMobSpawn(string typeMobSpawn)
     {
+        StartCoroutine(Ads());
         if (typeMobSpawn == "Cristal")
-        {
             spawnerMobsController.SetNeededMob(cristalCrate, 4);
-        }
         else if (typeMobSpawn == "Coin")
-        {
             spawnerMobsController.SetNeededMob(coinCrate, 4);
-        }
     }
 
     public void BuyCharacterLevelPoints(int cristalValue)
@@ -55,5 +64,16 @@ public class Shop : MonoBehaviour
                 character.AddCurrentLevelPoint(100);
             }
         }
+    }
+
+    private IEnumerator Ads()
+    {
+        AdsPanel.SetActive(true);
+        advice.SetAdviceText();
+        closeAdsButton.interactable = false;
+        closeAdsButtonImage.sprite = closeAdsSpriteButton[0];
+        yield return new WaitForSeconds(adsTime);
+        closeAdsButtonImage.sprite = closeAdsSpriteButton[1];
+        closeAdsButton.interactable = true;
     }
 }

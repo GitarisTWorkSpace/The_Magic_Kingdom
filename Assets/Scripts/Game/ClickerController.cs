@@ -22,10 +22,6 @@ public class ClickerController : MonoBehaviour
 
     public void DamageToMob()
     {
-        damageToMob = 5f;
-        if (mob.GetComponent<Mob>().GetMobAllType().Length > 0)
-            if (mob.GetComponent<Mob>().GetMobAllType()[0] == EntityType.Boss)
-                damageToMob = 500f;
         mob.GetComponent<IDamageble>().TakeDemage(damageToMob);
     }
 }

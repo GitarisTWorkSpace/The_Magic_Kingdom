@@ -22,8 +22,9 @@ public class Mob : MonoBehaviour, IDamageble
 
     public void TakeDemage(float damage)
     {
-        if (damage < 0) return;
+        //if (damage < 0) return;
         health -= damage;
+        CheackHealthMob();
         takedDamage?.Invoke((int)damage);
     }
 
@@ -31,6 +32,12 @@ public class Mob : MonoBehaviour, IDamageble
     {
         health = mobModel.GetHealth();
     } 
+
+    private void CheackHealthMob()
+    {
+        if (health < 0) health = 0;
+        if (health >= mobModel.GetHealth()) health = mobModel.GetHealth();
+    }
 
     private void Update()
     {

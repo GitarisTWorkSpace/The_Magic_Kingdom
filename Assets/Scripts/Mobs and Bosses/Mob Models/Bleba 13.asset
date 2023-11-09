@@ -16,7 +16,7 @@ MonoBehaviour:
   health: 255
   type: 02000000
   powerType: 0100000006000000
-  cristalChanceDrop: 100
+  cristalChanceDrop: 35
   minCristalValue: 1
   maxCristalValue: 4
   multiplyCristalValue: 1.2
