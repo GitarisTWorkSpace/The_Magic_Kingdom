@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Character", menuName = "Models/Character")]
@@ -62,6 +63,7 @@ public class CharacterModel : ScriptableObject
 
     public void UpgareCharacter()
     {
+        if (characterLevel >= 50) return;
         currentCharacterLevelPointValueToUgrade -= needCharacterLevelPointValueToUpgtade;
         characterLevel++;
         PlayerPrefs.SetInt(characterIndex.ToString() + "LVL", characterLevel);
