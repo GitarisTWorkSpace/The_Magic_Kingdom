@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class CharacterView : MonoBehaviour
 {
     [SerializeField] private CharacterUpgradeController upgradeController;
+    [SerializeField] private CoinModel coinModel;
 
     [Header("Имя пероснажа")]
     [SerializeField] private TMP_Text characterNameText;
@@ -67,7 +68,7 @@ public class CharacterView : MonoBehaviour
         characterLevelPoint.value = characterModel.GetCurrentLevelPoint();
 
         characterUpgradeButtonImage.sprite = characterUpgradeButtonSprites[1];
-        if (characterModel.CanUpgradeCharacter())
+        if (characterModel.CanUpgradeCharacter() && characterModel.GetAmountMoneyToUpgrade() <= coinModel.GetCoinCount())
             characterUpgradeButtonImage.sprite = characterUpgradeButtonSprites[0];
 
         coinNeedToUpgradeCharcterText.text = characterModel.GetAmountMoneyToUpgrade().ToString();
@@ -98,7 +99,7 @@ public class CharacterView : MonoBehaviour
         characterLevelPoint.value = characterModel.GetCurrentLevelPoint();
 
         characterUpgradeButtonImage.sprite = characterUpgradeButtonSprites[1];
-        if (characterModel.CanUpgradeCharacter())
+        if (characterModel.CanUpgradeCharacter() && characterModel.GetAmountMoneyToUpgrade() <= coinModel.GetCoinCount())
             characterUpgradeButtonImage.sprite = characterUpgradeButtonSprites[0];
 
         coinNeedToUpgradeCharcterText.text = characterModel.GetAmountMoneyToUpgrade().ToString();

@@ -6,6 +6,7 @@ public class Mob : MonoBehaviour, IDamageble
     [SerializeField] public MobModel mobModel;
     [SerializeField] public MoneyDrop drop;
     [SerializeField] private float health;
+    public bool CanTakeDamage {  get; set; }
 
     public static Action<int> takedDamage;
     public static Action mobDead;
@@ -23,6 +24,7 @@ public class Mob : MonoBehaviour, IDamageble
     public void TakeDemage(float damage)
     {
         //if (damage < 0) return;
+        if (!CanTakeDamage) return;
         health -= damage;
         CheackHealthMob();
         takedDamage?.Invoke((int)damage);
@@ -31,6 +33,7 @@ public class Mob : MonoBehaviour, IDamageble
     private void Start()
     {
         health = mobModel.GetHealth();
+        CanTakeDamage = true;
     } 
 
     private void CheackHealthMob()

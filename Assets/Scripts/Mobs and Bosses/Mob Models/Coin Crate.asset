@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Coin Crate
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 85e67760cffb1e842917a71f542f6ddc, type: 3}
-  health: 75
+  health: 50
   type: 00000000
   powerType: 00000000
   cristalChanceDrop: 0
   minCristalValue: 0
   maxCristalValue: 0
   multiplyCristalValue: 0
-  minCoinValue: 1500
-  maxCoinValue: 15000
+  minCoinValue: 5000
+  maxCoinValue: 25000
   multiplyCoinValue: 1.5
   levelPoints: 0

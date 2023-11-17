@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tentacle
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 1626a1e86f5646e4c9af4e74553225d3, type: 3}
-  health: 100
+  health: 175
   type: 02000000
   powerType: 04000000
   cristalChanceDrop: 5

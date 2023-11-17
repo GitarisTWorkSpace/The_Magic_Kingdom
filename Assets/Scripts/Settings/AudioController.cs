@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
@@ -9,11 +10,6 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] private float[] musicVolume;
     [SerializeField] private AudioClip[] anbiantclip;
-
-    public void MuteMusik(bool status)
-    {
-        anbiantAudioSource.mute = status;
-    }
 
     private void Start()
     {

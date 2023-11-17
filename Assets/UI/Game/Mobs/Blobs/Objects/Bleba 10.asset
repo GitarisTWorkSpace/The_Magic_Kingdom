@@ -15,7 +15,7 @@ MonoBehaviour:
   mobSprite: {fileID: 21300000, guid: 8bc6e2aeaaf0a2b4eaee3f988e601e30, type: 3}
   health: 75
   type: 02000000
-  powerType: 0100000003000000
+  powerType: 03000000
   cristalChanceDrop: 0.8
   minCristalValue: 1
   maxCristalValue: 2

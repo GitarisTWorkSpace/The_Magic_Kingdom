@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Monster Rat
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 156437b44cbfc584c91ed781ed57cdcf, type: 3}
-  health: 130
+  health: 136
   type: 02000000
   powerType: 00000000
   cristalChanceDrop: 0.3
   minCristalValue: 1
-  maxCristalValue: 3
+  maxCristalValue: 2
   multiplyCristalValue: 0.5
   minCoinValue: 15
   maxCoinValue: 450

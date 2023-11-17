@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bush
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 554538e0e2a852d489ed2d716ae9a162, type: 3}
-  health: 30
+  health: 32
   type: 00000000
   powerType: 01000000
   cristalChanceDrop: 1
@@ -23,4 +23,4 @@ MonoBehaviour:
   minCoinValue: 15
   maxCoinValue: 500
   multiplyCoinValue: 0.3
-  levelPoints: 1
+  levelPoints: 0

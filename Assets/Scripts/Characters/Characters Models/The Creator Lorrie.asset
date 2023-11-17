@@ -18,7 +18,7 @@ MonoBehaviour:
     - \u041B\u043E\u0440\u0440\u0438"
   characterLevel: 1
   needCharacterLevelPointValueToUpgtade: 80
-  currentCharacterLevelPointValueToUgrade: 0
+  currentCharacterLevelPointValueToUgrade: 663
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 01000000
   powerType: 05000000

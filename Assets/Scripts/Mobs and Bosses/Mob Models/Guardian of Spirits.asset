@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Guardian of Spirits
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 4b368a7a84ff0be4aa70b6fcbd64a7da, type: 3}
-  health: 145
+  health: 154
   type: 0100000003000000
   powerType: 0600000005000000
   cristalChanceDrop: 2

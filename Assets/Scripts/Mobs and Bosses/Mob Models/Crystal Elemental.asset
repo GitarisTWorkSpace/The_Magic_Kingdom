@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crystal Elemental
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: a4a46bdb1bb07304f9963402ac7279bd, type: 3}
-  health: 255
+  health: 268
   type: 03000000
   powerType: 06000000
   cristalChanceDrop: 35

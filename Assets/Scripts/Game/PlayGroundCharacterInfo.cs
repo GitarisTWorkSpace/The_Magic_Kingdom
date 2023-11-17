@@ -48,8 +48,8 @@ public class PlayGroundCharacterInfo : MonoBehaviour
         for (int i = 0; i < characterPowerTypeImages.Length; i++)
             SelectSpriteCharacterPowerType(characterPowerTypeImages[i], i, characterPosition);
 
-        characterDamage.text = characterInPositon.GetCurrentDamage().ToString();
-        characterDamageRate.text = characterInPositon.GetCurrentDamageRate().ToString();
+        characterDamage.text = Mathf.Round(characterInPositon.GetCurrentDamage()).ToString();
+        characterDamageRate.text = Mathf.Round(characterInPositon.GetCurrentDamageRate()).ToString();
     }
 
     private void SelectSpriteCharacterType(Image img, int index, int positionIndex)

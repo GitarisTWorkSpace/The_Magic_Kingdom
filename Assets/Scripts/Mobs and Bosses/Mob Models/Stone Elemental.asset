@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc64e76c787b4b4b817bf3501a7f419, type: 3}
-  m_Name: Spirits
+  m_Name: Stone Elemental
   m_EditorClassIdentifier: 
-  mobSprite: {fileID: 21300000, guid: 3b9fbb365df4d4c44ae7dd8d3690409b, type: 3}
-  health: 69
+  mobSprite: {fileID: 21300000, guid: f87b21fe5d741eb47a6dd5e9c7a2f71e, type: 3}
+  health: 264
   type: 03000000
-  powerType: 05000000
-  cristalChanceDrop: 3
+  powerType: 0100000006000000
+  cristalChanceDrop: 10
   minCristalValue: 1
   maxCristalValue: 3
   multiplyCristalValue: 1
   minCoinValue: 15
   maxCoinValue: 1000
   multiplyCoinValue: 1
-  levelPoints: 4
+  levelPoints: 3

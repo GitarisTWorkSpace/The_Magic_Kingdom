@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire Spirit
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 8f762065ef5b94544b1d661b328edc52, type: 3}
-  health: 75
+  health: 82
   type: 03000000
   powerType: 03000000
   cristalChanceDrop: 0.7

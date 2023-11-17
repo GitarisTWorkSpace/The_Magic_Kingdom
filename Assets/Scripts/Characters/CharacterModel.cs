@@ -40,7 +40,8 @@ public class CharacterModel : ScriptableObject
 
     public EntityType[] GetCharacterAllType() => type;
     public EntityPowerType[] GetChracterAllPowerType() => powerType;
-    public float GetDamage() => damage;
+    public float GetDamage() => characterLevel >= 20 ? damage * (characterLevel / 10) : damage;
+
     public float GetDamageRate() => damageRate;
 
     public string GetAbilitieDescriptionByIndex(int index) => abilities[index].GetAbilitiDescription();

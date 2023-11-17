@@ -6,5 +6,6 @@ public enum EntityPowerType
     Fire,
     Dark,
     Light,
-    Cristal
+    Cristal,
+    All
 }

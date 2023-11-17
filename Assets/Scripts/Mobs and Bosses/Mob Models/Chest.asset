@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chest
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 42640026e22683241b67c64dcfcd1538, type: 3}
-  health: 275
+  health: 250
   type: 00000000
   powerType: 00000000
   cristalChanceDrop: 50

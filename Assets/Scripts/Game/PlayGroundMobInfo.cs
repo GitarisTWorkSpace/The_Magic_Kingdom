@@ -64,6 +64,11 @@ public class PlayGroundMobInfo : MonoBehaviour
                 img.gameObject.SetActive(true);
                 img.sprite = TypeSprites[3];
             }
+            if (type == EntityType.All)
+            {
+                img.gameObject.SetActive(true);
+                img.sprite = TypeSprites[4];
+            }
         }
     }
 
@@ -103,6 +108,11 @@ public class PlayGroundMobInfo : MonoBehaviour
             {
                 img.gameObject.SetActive(true);
                 img.sprite = PowerTypeSprites[5];
+            }
+            if (type == EntityPowerType.All)
+            {
+                img.gameObject.SetActive(true);
+                img.sprite = PowerTypeSprites[6];
             }
         }
     }

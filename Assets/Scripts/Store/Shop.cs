@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -51,7 +52,7 @@ public class Shop : MonoBehaviour
         if (typeMobSpawn == "Cristal")
             spawnerMobsController.SetNeededMob(cristalCrate, 4);
         else if (typeMobSpawn == "Coin")
-            spawnerMobsController.SetNeededMob(coinCrate, 4);
+            spawnerMobsController.SetNeededMob(coinCrate, 2);
     }
 
     public void BuyCharacterLevelPoints(int cristalValue)
@@ -72,7 +73,9 @@ public class Shop : MonoBehaviour
         advice.SetAdviceText();
         closeAdsButton.interactable = false;
         closeAdsButtonImage.sprite = closeAdsSpriteButton[0];
+        spawnerMobsController.GetCurrenMob().GetComponent<Mob>().CanTakeDamage = false;
         yield return new WaitForSeconds(adsTime);
+        spawnerMobsController.GetCurrenMob().GetComponent<Mob>().CanTakeDamage = true;
         closeAdsButtonImage.sprite = closeAdsSpriteButton[1];
         closeAdsButton.interactable = true;
     }

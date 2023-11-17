@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wines With Character
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 7702139766c066a4593aaf7cfd4a085c, type: 3}
-  health: 180
+  health: 135
   type: 00000000
   powerType: 01000000
   cristalChanceDrop: 0

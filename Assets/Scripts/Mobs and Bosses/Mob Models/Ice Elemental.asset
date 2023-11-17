@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ice Elemental
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: b80763f20b110f548abd2f4c6503356a, type: 3}
-  health: 95
+  health: 124
   type: 03000000
   powerType: 02000000
   cristalChanceDrop: 2

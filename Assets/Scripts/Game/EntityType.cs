@@ -4,5 +4,6 @@ public enum EntityType
     Human,
     Monster,
     Spirit,
+    All,
     Boss
 }

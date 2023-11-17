@@ -75,7 +75,7 @@ public class BattleGroundController : MonoBehaviour
     {
         for (int i = 0; i < isBuyPostion.Length; i++) 
         {
-            PlayerPrefs.SetInt("BuyPosirion" + i, System.Convert.ToInt32(false));
+            PlayerPrefs.SetInt("BuyPosirion" + i, Convert.ToInt32(false));
         }
     }
 
@@ -83,6 +83,10 @@ public class BattleGroundController : MonoBehaviour
     {
         LoadBuyPosition();
         LoadCharacterInPositon();
+        foreach (var character in characterModels)
+        {
+            character.LoadCharacterInfo();
+        }
     }
 
     private void OnEnable()

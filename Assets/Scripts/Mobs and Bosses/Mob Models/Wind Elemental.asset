@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wind Elemental
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: ae6060a4a6946f84494a228ea8464c13, type: 3}
-  health: 84
+  health: 64
   type: 03000000
   powerType: 01000000
   cristalChanceDrop: 15

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Turtle
   m_EditorClassIdentifier: 
   mobSprite: {fileID: 21300000, guid: 1ef5d4fe9993dbf4c82fc91a94cd1430, type: 3}
-  health: 350
+  health: 354
   type: 02000000
   powerType: 01000000
   cristalChanceDrop: 8

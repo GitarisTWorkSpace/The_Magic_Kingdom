@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class BattleGroundView : MonoBehaviour
 {
+    [SerializeField] private GameObject[] choiseCharacterButton;
+
     [SerializeField] private GameObject[] numberPositionImages;
     [SerializeField] private GameObject[] buyPositionButton;
     [SerializeField] private bool[] isBuyPostion = new bool[4];
@@ -16,6 +18,7 @@ public class BattleGroundView : MonoBehaviour
     public void HiddenPlayGround(bool status)
     {
         isOpen = status;
+        SetInteractableButton(status);
         SetActivePanels(status, numberPositionImages);
         SetBuyButton(status);
         SetActiveDestroyCharacterButton(status);
@@ -64,6 +67,14 @@ public class BattleGroundView : MonoBehaviour
         foreach (GameObject item in panels)
         {
             item.SetActive(state);
+        }
+    }
+
+    private void SetInteractableButton(bool status)
+    {
+        foreach(var btn in choiseCharacterButton) 
+        {
+            btn.GetComponent<Button>().interactable = status;
         }
     }
 

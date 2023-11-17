@@ -86,15 +86,15 @@ public class SpawnerMobsController : MonoBehaviour
 
     private void CheckMobCount()
     {
-        if(mobCount == 50) 
+        if(mobCount == 150) 
         {
             neededMob = bossList[0];
             neededMobCount = mobCount + 1;
             spawnNeedMob = true;
         }
-        else if (mobCount == 250)
+        else if (mobCount == 480)
         {
-            neededMob = bossList[0];
+            neededMob = bossList[1];
             neededMobCount = mobCount + 1;
             spawnNeedMob = true;
         }

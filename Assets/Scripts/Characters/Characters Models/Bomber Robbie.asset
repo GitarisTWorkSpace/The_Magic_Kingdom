@@ -15,9 +15,9 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: 57e46501d0602b849b7756b648e219cd, type: 3}
   characterIndex: 3
   characterName: "\u041F\u043E\u0434\u0440\u044B\u0432\u043D\u0438\u043A - \u0420\u043E\u0431\u0431\u0438"
-  characterLevel: 1
+  characterLevel: 13
   needCharacterLevelPointValueToUpgtade: 200
-  currentCharacterLevelPointValueToUgrade: 0
+  currentCharacterLevelPointValueToUgrade: 1287
   upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
   type: 01000000
   powerType: 03000000
