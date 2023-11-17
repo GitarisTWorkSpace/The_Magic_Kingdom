@@ -18,6 +18,6 @@ public class CoinModel : ScriptableObject
 
     public void LoadCoinCount()
     {
-        coinCount = PlayerPrefs.GetInt("CoinCount");
+        coinCount = PlayerPrefs.GetInt("CoinCount", 0);
     }
 }

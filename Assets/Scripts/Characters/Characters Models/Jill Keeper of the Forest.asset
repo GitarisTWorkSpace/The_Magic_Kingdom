@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
+  m_Name: Jill Keeper of the Forest
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: a2d1237ede3d78f4f86ac9d03b8e3a64, type: 3}
+  characterIndex: 1
+  characterName: "\u0414\u0436\u0438\u043B\u043B - \u0425\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0438\u0446\u0430
+    \u043B\u0435\u0441\u0430"
+  characterLevel: 1
+  needCharacterLevelPointValueToUpgtade: 125
+  currentCharacterLevelPointValueToUgrade: 679
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 01000000
+  powerType: 0100000005000000
+  damage: 15
+  damageRate: 4
+  abilities:
+  - {fileID: 11400000, guid: 66ba35d09cd592c46898006666092094, type: 2}
+  - {fileID: 11400000, guid: 53704e8b9ac0b024fa28d57a05ec619a, type: 2}
+  - {fileID: 11400000, guid: 663f85070f019d8479f42cc0b3d238b4, type: 2}

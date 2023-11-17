@@ -6,6 +6,9 @@ public class MobModel : ScriptableObject
     [SerializeField] private Sprite mobSprite;
     [SerializeField] private float health;
 
+    [SerializeField] private EntityType[] type;
+    [SerializeField] private EntityPowerType[] powerType;
+
     [Header("Cristal")]
     [SerializeField] private float cristalChanceDrop;
     [SerializeField] private int minCristalValue;
@@ -17,7 +20,12 @@ public class MobModel : ScriptableObject
     [SerializeField] private int maxCoinValue;
     [SerializeField] private float multiplyCoinValue;
 
+    [Header("Level points")]
+    [SerializeField] private int levelPoints;
+
     public float GetHealth() => health;
+    public EntityType[] GetMobAllType() => type;
+    public EntityPowerType[] GetMobAllPowerType() => powerType;
     public Sprite GetSprite() => mobSprite;
     public float GetCristalChanceDrop() => cristalChanceDrop;
     public int GetMinCristalValue() => minCristalValue;
@@ -26,5 +34,7 @@ public class MobModel : ScriptableObject
     public int GetMinCoinValue() => minCoinValue;
     public int GetMaxCoinValue() => maxCoinValue;
     public float GetMultiplyCoinValue() => multiplyCoinValue;
+
+    public int GetMobDropCountLevelPoints() => levelPoints;
 
 }

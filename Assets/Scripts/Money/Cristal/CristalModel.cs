@@ -19,6 +19,6 @@ public class CristalModel : ScriptableObject
 
     public void LoadCristalCount()
     {
-        cristalCount = PlayerPrefs.GetInt("CristalCount");
+        cristalCount = PlayerPrefs.GetInt("CristalCount", 0);
     }
 }

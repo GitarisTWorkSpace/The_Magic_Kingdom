@@ -15,22 +15,25 @@ public class UpgradePanel : MonoBehaviour
         if (isOpen)
         {
             animPanel.Play();
-            animPanel.clip = animPanelClips[1];
+            animPanel.clip = animPanelClips[0];
             isOpen = false;
         }
         else if (!isOpen)
         {
             animPanel.Play();
-            animPanel.clip = animPanelClips[0];
+            animPanel.clip = animPanelClips[1];
             isOpen = true;
         }
     }
 
     public void CloseUpgradePanel()
     {
-        animPanel.clip = animPanelClips[1];
-        animPanel.Play();
-        animPanel.clip = animPanelClips[0];
-        isOpen = true;
+        if (isOpen) 
+        {
+            animPanel.clip = animPanelClips[1];
+            animPanel.Play();
+            animPanel.clip = animPanelClips[0];
+            isOpen = false;
+        }        
     }
 }

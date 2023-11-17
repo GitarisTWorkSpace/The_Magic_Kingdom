@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
+  m_Name: Lepre-thief Jim
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: e115dbc758a63cd4da3a6fe9b5eea9e1, type: 3}
+  characterIndex: 0
+  characterName: "\u041B\u0435\u043F\u0440\u0435-\u0432\u043E\u0440 \u0414\u0436\u0438\u043C"
+  characterLevel: 2
+  needCharacterLevelPointValueToUpgtade: 90
+  currentCharacterLevelPointValueToUgrade: 175
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 02000000
+  powerType: 01000000
+  damage: 20
+  damageRate: 6
+  abilities:
+  - {fileID: 11400000, guid: 1859767e135a0d24291b39de393637b9, type: 2}
+  - {fileID: 11400000, guid: a6117869a42cb9d47b97c88b41b2a35c, type: 2}
+  - {fileID: 11400000, guid: bbd94dc5eeb58ce4b8a299f8426e2dc9, type: 2}

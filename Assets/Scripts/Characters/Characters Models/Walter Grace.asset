@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
+  m_Name: Walter Grace
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: 6cd68a42a285027429b6fcfa001ab1bc, type: 3}
+  characterIndex: 2
+  characterName: "\u0423\u043E\u043B\u0442\u0435\u0440 \u0413\u0440\u0435\u0439\u0441"
+  characterLevel: 3
+  needCharacterLevelPointValueToUpgtade: 150
+  currentCharacterLevelPointValueToUgrade: 863
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 02000000
+  powerType: 04000000
+  damage: 25
+  damageRate: 8
+  abilities:
+  - {fileID: 11400000, guid: 461a59d8f341a0941bde68e7a3e09e22, type: 2}
+  - {fileID: 11400000, guid: 3481a1140bbaf2f4faf582a5ae493200, type: 2}
+  - {fileID: 11400000, guid: 7ee5c83719c5a234ca54fc342c3dc450, type: 2}

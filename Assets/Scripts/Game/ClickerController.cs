@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ClickerController : MonoBehaviour
 {
-    [SerializeField] private MobView mobView;
     [SerializeField] private float damageToMob;
     private GameObject mob;
 
@@ -24,6 +23,5 @@ public class ClickerController : MonoBehaviour
     public void DamageToMob()
     {
         mob.GetComponent<IDamageble>().TakeDemage(damageToMob);
-        mobView.ShakeMob();
     }
 }

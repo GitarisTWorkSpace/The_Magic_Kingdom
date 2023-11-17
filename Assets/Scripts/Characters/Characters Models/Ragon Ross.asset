@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8723ca75dd5164c861108e91a773f3, type: 3}
+  m_Name: Ragon Ross
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: 9f606e4f5eec34141a57a2608aa2f016, type: 3}
+  characterIndex: 7
+  characterName: "\u0420\u0430\u0433\u043E\u043D - \u0420\u043E\u0441"
+  characterLevel: 1
+  needCharacterLevelPointValueToUpgtade: 175
+  currentCharacterLevelPointValueToUgrade: 106
+  upgradeModel: {fileID: 11400000, guid: 85e440e04ba686a49b944d8ea8f8c207, type: 2}
+  type: 03000000
+  powerType: 03000000
+  damage: 32
+  damageRate: 10
+  abilities:
+  - {fileID: 11400000, guid: 534301c406ea96a43b5cddbc03b3069c, type: 2}
+  - {fileID: 11400000, guid: 9c7aae421c4a0934abb8cb93f019db56, type: 2}
+  - {fileID: 11400000, guid: cda0469d2b537b140a3809a9a7f88f15, type: 2}

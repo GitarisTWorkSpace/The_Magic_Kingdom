@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class InfoPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject mobHealthPointText;
+    [SerializeField] private GameObject infoPanel;
     private bool isOpen = false;
 
     public void HiddenInfo()
     {
         if (isOpen)
         {
-            mobHealthPointText.SetActive(false);
+            infoPanel.SetActive(false);
             isOpen = false;
         }
         else if (!isOpen)
         {
-            mobHealthPointText.SetActive(true);
+            infoPanel.SetActive(true);
             isOpen = true;
         }
     }
