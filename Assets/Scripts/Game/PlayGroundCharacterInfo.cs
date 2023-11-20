@@ -21,6 +21,8 @@ public class PlayGroundCharacterInfo : MonoBehaviour
     [SerializeField] private Image[] characterPowerTypeImages;
 
     [Header("Урон пероснажа")]
+    [SerializeField] private Sprite[] damagSprits;
+    [SerializeField] private Image damageImage;
     [SerializeField] private TMP_Text characterDamage;
 
     [Header("Скорость атаки пероснажа")]
@@ -48,8 +50,13 @@ public class PlayGroundCharacterInfo : MonoBehaviour
         for (int i = 0; i < characterPowerTypeImages.Length; i++)
             SelectSpriteCharacterPowerType(characterPowerTypeImages[i], i, characterPosition);
 
-        characterDamage.text = Mathf.Round(characterInPositon.GetCurrentDamage()).ToString();
-        characterDamageRate.text = Mathf.Round(characterInPositon.GetCurrentDamageRate()).ToString();
+
+        if (characterInPositon.GetCurrentDamage() >= 0)
+            damageImage.sprite = damagSprits[0];
+        else
+            damageImage.sprite = damagSprits[1];
+        characterDamage.text = Mathf.Abs(characterInPositon.GetCurrentDamage()).ToString();
+        characterDamageRate.text = characterInPositon.GetCurrentDamageRate().ToString();
     }
 
     private void SelectSpriteCharacterType(Image img, int index, int positionIndex)

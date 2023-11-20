@@ -50,9 +50,9 @@ public class Shop : MonoBehaviour
     {
         StartCoroutine(Ads());
         if (typeMobSpawn == "Cristal")
-            spawnerMobsController.SetNeededMob(cristalCrate, 4);
+            spawnerMobsController.SetNeededMob(cristalCrate, 3);
         else if (typeMobSpawn == "Coin")
-            spawnerMobsController.SetNeededMob(coinCrate, 2);
+            spawnerMobsController.SetNeededMob(coinCrate, 5);
     }
 
     public void BuyCharacterLevelPoints(int cristalValue)
