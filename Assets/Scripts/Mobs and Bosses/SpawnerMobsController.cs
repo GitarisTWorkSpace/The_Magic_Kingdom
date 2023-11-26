@@ -81,7 +81,8 @@ public class SpawnerMobsController : MonoBehaviour
     {
         SaveMobCount();
         mobCount++;
-        mobCountText.text = mobCount.ToString();
+        if (mobCountText != null)
+            mobCountText.text = mobCount.ToString();
     }
 
     private void CheckMobCount()
