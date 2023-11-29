@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240563522}
   m_Layer: 0
-  m_Name: -------GAME OBJECTS-------
+  m_Name: ------- GAME OBJECTS -------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,7 +974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887315668}
   m_Layer: 0
-  m_Name: -------CAMERA-------
+  m_Name: ------- CAMERA -------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,7 +2238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962218584}
   m_Layer: 0
-  m_Name: -------CANVAS-------
+  m_Name: ------- CANVAS -------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
