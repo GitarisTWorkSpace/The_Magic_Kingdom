@@ -56,3 +56,6 @@ crashlytics-build.properties
 .vscode
 .vsconfig
 .idea
+
+#Ui 
+./Assets/UI
