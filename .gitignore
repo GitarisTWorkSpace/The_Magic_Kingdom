@@ -58,4 +58,4 @@ crashlytics-build.properties
 .idea
 
 #Ui 
-./Assets/UI
+/Assets/UI/
